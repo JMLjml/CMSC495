@@ -1,0 +1,15 @@
+# Compiled Files   #
+####################
+bin/*
+build/*.*
+
+# IDE Backup Files #
+####################
+*~
+
+# GTAGS FILES #
+####################
+GPATH
+GRTAGS
+GSYMS
+GTAGS
