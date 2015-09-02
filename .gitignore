@@ -2,10 +2,13 @@
 ####################
 bin/*
 build/*.*
+/bin/
+.classpath
 
 # IDE Backup Files #
 ####################
 *~
+.project
 
 # GTAGS FILES #
 ####################
@@ -13,3 +16,5 @@ GPATH
 GRTAGS
 GSYMS
 GTAGS
+
+
