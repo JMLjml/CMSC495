@@ -1,9 +1,3 @@
-john 		main menu
-bradley		ng
-caroline	quit/new game	
-joe		restart current quiz
-wayne		new game
-
 1.
 Brachiosaurus is a sauropod. This means what?
 A. It had a long neck
