@@ -1,0 +1,14 @@
+main_menu_scenario.org
+
+* QUIT - user presses the Quit button
+** user scores should be written to file (if we decide to do this)
+** program should exit gracefuly
+
+* Start A New Quiz - user presses one of the 5 start quiz buttons
+** program attempts to load quiz data file
+*** throws exception and posts an error message if unsucessful
+*** returns to main menu
+** program attempts to parse the quiz data file
+*** throws exception and posts an error message if unsucessful
+*** returns to main menu
+** Guiz scenario begins
