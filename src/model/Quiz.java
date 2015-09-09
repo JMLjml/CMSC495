@@ -1,22 +1,16 @@
-/**
- * 
- */
 package model;
 
-/**
- * @author john
- *
- */
+import java.util.ArrayList;
+
 public class Quiz {
   private String name;
-
+  private int score = 0;
+  private ArrayList<Question> questions;
+  
   /**
    * 
    */
-  public Quiz() {
-    // TODO Auto-generated constructor stub
-  }
-  
+ 
   public Quiz(String name) {
     this.name = name;
   }
@@ -25,10 +19,23 @@ public class Quiz {
     return this.name;
   }
   
+  private void parseQuestions() {
   
-  // Stub method to help get unit testing setup and working
-  public int dummyTestStub() {
-    return 7;
   }
+  
+  public ArrayList<Question> getQuestions() {
+    ArrayList<Question> questions = null;
+    return questions;
+  }
+  
+  public int getScore() {
+    return this.score;
+  }
+  
+  public void setScore(int score) {
+    this.score = score;
+  }
+  
+  
 
 }

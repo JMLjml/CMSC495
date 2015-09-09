@@ -34,14 +34,7 @@ public class Quiz_Tests {
   public void tearDown() throws Exception {
   }
 
-  /**
-   * Test method for {@link model.Quiz#dummyTestStub()}.
-   */
-  @Test
-  public void testDummyTestStub() {
-    assertEquals(expected, quiz.dummyTestStub());
-    
-  }
+  
 
   /**
    * Test method for {@link java.lang.Object#toString()}.
