@@ -1,0 +1,40 @@
+<diagram program="umletino" version="14.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>10</x><y>10</y><w>250</w><h>170</h></coordinates><panel_attributes>Quiz Class
+--
+- Name: String
+- Score: int
+- ArrayList&lt;Question&gt; questions
+--
++ Quiz(name: String)
++ getQuestions(): ArrayList&lt;Question&gt;
++ getScore(): int
++ setScore(score: int)
++ toString(): String
+- parseQuestions()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>10</y><w>460</w><h>170</h></coordinates><panel_attributes>Question Class
+--
+- questionType: QuestionTypeEnum
+- questionText: String
+- answerText: String
+- multipleChoiceOptions: ArrayList&lt;String&gt;
+--
++ Question(questionType: QuestionTypeEnum, questionText: String,
+                 answerText: String, multipleChoiceOptions: ArrayList&lt;string&gt;)
++ getQuestionText(): String
++ getAnswerText(): String
++ getMultipleChoiceOptions(): ArrayList&lt;String&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>220</y><w>260</w><h>210</h></coordinates><panel_attributes>Quiz_Controller Class
+--
+- scores: ArrayList&lt;Integer&gt;
+- quizzes: ArrayList&lt;Quiz&gt;
+- currQuestion: int
+--
++ Quiz_Controller()
++ getScores(): ArrayList&lt;Integer&gt;
++ writeScores(): boolean
++ displayNextQuestion()
++ checkAnswer(answer: String): boolean
++ startQuiz(name: String)
+- loadQuiz(name: String): boolean
+- updateScores()
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
