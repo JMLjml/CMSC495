@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class Application_Window {
+public class Quiz_Application {
 
   private JFrame frame;
 
@@ -21,7 +21,7 @@ public class Application_Window {
     EventQueue.invokeLater(new Runnable() {
       public void run() {
         try {
-          Application_Window window = new Application_Window();
+          Quiz_Application window = new Quiz_Application();
           window.frame.setVisible(true);
         } catch (Exception e) {
           e.printStackTrace();
@@ -33,7 +33,7 @@ public class Application_Window {
   /**
    * Create the application.
    */
-  public Application_Window() {
+  public Quiz_Application() {
     initialize();
   }
 
