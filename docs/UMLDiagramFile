@@ -23,7 +23,7 @@
 + getQuestionText(): String
 + getAnswerText(): String
 + getMultipleChoiceOptions(): ArrayList&lt;String&gt;
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>220</y><w>340</w><h>210</h></coordinates><panel_attributes>Quiz_Controller Class
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>240</y><w>340</w><h>210</h></coordinates><panel_attributes>Quiz_Controller Class
 --
 - scores: ArrayList&lt;Integer&gt;
 - quizzes: ArrayList&lt;Quiz&gt;
@@ -39,15 +39,27 @@
 + startQuiz(name: String)
 - loadQuiz(name: String): boolean
 - updateScores()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>490</y><w>300</w><h>130</h></coordinates><panel_attributes>Quiz_Application Class
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>540</y><w>300</w><h>130</h></coordinates><panel_attributes>Quiz_Application Class
 --
 - mainMenu: MainMenuView
 -qc: Quiz_Controller
 --
 + main()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>220</y><w>260</w><h>190</h></coordinates><panel_attributes>MainMenuView Class
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>540</y><w>220</w><h>140</h></coordinates><panel_attributes>MainMenuView Class
 --
 - frame: JFrame
+- btnQuit: JButton
+- btnStart: JButton
+--
++ MainMenuView()
++ setVisable(visable: boolean)
+- initialize()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>540</y><w>240</w><h>170</h></coordinates><panel_attributes>QuizView Class
+--
+- frame: JFrame
+- btnQuit: JButton
+- btnCheckAnswer: JButton
+- btnDisplayNextQuestion: JButton
 --
 + MainMenuView()
 + setVisable(visable: boolean)
