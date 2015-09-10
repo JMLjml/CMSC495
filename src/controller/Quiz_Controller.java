@@ -14,6 +14,10 @@ public class Quiz_Controller {
     // TODO Auto-generated constructor stub
   }
   
+  public void launchQuizGame() {
+    System.out.println("This is the main entry point for the whole system");
+  };
+  
   public ArrayList<Integer> getScores() {
     return this.scores;
   }

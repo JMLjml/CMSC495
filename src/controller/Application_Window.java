@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import java.awt.EventQueue;
 
@@ -12,6 +12,12 @@ public class Application_Window {
    * Launch the application.
    */
   public static void main(String[] args) {
+    
+    Quiz_Controller qc = new Quiz_Controller();
+    
+    qc.launchQuizGame();
+    
+    
     EventQueue.invokeLater(new Runnable() {
       public void run() {
         try {
