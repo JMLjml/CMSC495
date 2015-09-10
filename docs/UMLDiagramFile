@@ -23,13 +23,15 @@
 + getQuestionText(): String
 + getAnswerText(): String
 + getMultipleChoiceOptions(): ArrayList&lt;String&gt;
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>220</y><w>260</w><h>210</h></coordinates><panel_attributes>Quiz_Controller Class
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>220</y><w>340</w><h>210</h></coordinates><panel_attributes>Quiz_Controller Class
 --
 - scores: ArrayList&lt;Integer&gt;
 - quizzes: ArrayList&lt;Quiz&gt;
 - currQuestion: int
+- mainMenu: MainMenuView
 --
-+ Quiz_Controller()
++ Quiz_Controller(mainMenu: MainMenuView)
++ launchQuizGame()
 + getScores(): ArrayList&lt;Integer&gt;
 + writeScores(): boolean
 + displayNextQuestion()
@@ -37,4 +39,17 @@
 + startQuiz(name: String)
 - loadQuiz(name: String): boolean
 - updateScores()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>490</y><w>300</w><h>130</h></coordinates><panel_attributes>Quiz_Application Class
+--
+- mainMenu: MainMenuView
+-qc: Quiz_Controller
+--
++ main()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>220</y><w>260</w><h>190</h></coordinates><panel_attributes>MainMenuView Class
+--
+- frame: JFrame
+--
++ MainMenuView()
++ setVisable(visable: boolean)
+- initialize()
 </panel_attributes><additional_attributes></additional_attributes></element></diagram>
