@@ -8,14 +8,18 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import view.MainMenuView;
 import controller.Quiz_Controller;
 /**
  * @author john
  *
  */
 public class Quiz_Controller_Tests {
+  
+  private MainMenuView mainMenu = new MainMenuView();
 
-  Quiz_Controller qc = new Quiz_Controller();
+  Quiz_Controller qc = new Quiz_Controller(mainMenu);
   
   /**
    * @throws java.lang.Exception

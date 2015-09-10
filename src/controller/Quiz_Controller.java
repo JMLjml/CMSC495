@@ -2,6 +2,9 @@ package controller;
 
 import java.util.ArrayList;
 
+import java.awt.EventQueue;
+
+import view.MainMenuView;
 import model.Quiz;
 
 public class Quiz_Controller {
@@ -9,13 +12,27 @@ public class Quiz_Controller {
   private ArrayList<Quiz> quizzes;
   private ArrayList<Integer> scores;
   private int currQuestion;
+  private MainMenuView mainMenu;
   
-  public Quiz_Controller() {
+  public Quiz_Controller(MainMenuView mainMenu) {
+    this.mainMenu = mainMenu;
     // TODO Auto-generated constructor stub
   }
   
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
+    
+    System.out.println("Launch the main menu view here");
+    
+    try {
+      
+      this.mainMenu.setVisable(true);
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+    
   };
   
   public ArrayList<Integer> getScores() {
