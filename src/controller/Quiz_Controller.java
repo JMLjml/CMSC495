@@ -1,17 +1,16 @@
 package controller;
 
 import java.util.ArrayList;
-
 import java.awt.EventQueue;
 
 import view.MainMenuView;
+import model.Question;
 import model.Quiz;
 
 public class Quiz_Controller {
 
   private ArrayList<Quiz> quizzes;
-  private ArrayList<Integer> scores;
-  private int currQuestion;
+  private Question currQuestion;
   private MainMenuView mainMenu;
   
   public Quiz_Controller(MainMenuView mainMenu) {
