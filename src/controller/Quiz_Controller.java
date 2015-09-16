@@ -34,9 +34,7 @@ public class Quiz_Controller {
     
   };
   
-  public ArrayList<Integer> getScores() {
-    return this.scores;
-  }
+ 
   
   public boolean writeScores() {
     return false;
