@@ -1,3 +1,14 @@
+/** 
+ * Quiz_Controller.java
+ * 
+ * Provides  controller functionality for the Dino Quiz Application.
+ * 
+ * Author(s):
+ * 
+ * John Lasheski - Basic design and initial method stub creation
+ * 
+ */
+
 package controller;
 
 import java.util.ArrayList;
@@ -53,6 +64,8 @@ public class Quiz_Controller {
   }
   
   private void updateScores() {};
+  
+
   //Dummy Method to get unit testing working
   public String toString() {
     return "Quiz Controller";

@@ -1,4 +1,11 @@
-/**
+/** 
+ * Quiz_Controller_Tests.java
+ * 
+ * JUnit tests for the Quiz_Controller.java class.
+ * 
+ * Author(s):
+ * 
+ * John Lasheski
  * 
  */
 package tests;
@@ -11,21 +18,20 @@ import org.junit.Test;
 
 import view.MainMenuView;
 import controller.Quiz_Controller;
-/**
- * @author john
- *
- */
+
 public class Quiz_Controller_Tests {
   
-  private MainMenuView mainMenu = new MainMenuView();
+  private MainMenuView mainMenu;
 
-  Quiz_Controller qc = new Quiz_Controller(mainMenu);
+  private Quiz_Controller qc;
   
   /**
    * @throws java.lang.Exception
    */
   @Before
   public void setUp() throws Exception {
+      this.mainMenu = new MainMenuView();
+      this.qc = new Quiz_Controller(this.mainMenu);
   }
 
   /**
@@ -35,12 +41,74 @@ public class Quiz_Controller_Tests {
   public void tearDown() throws Exception {
   }
 
-  /**
-   * Test method for {@link java.lang.Object#toString()}.
-   */
+ 
   @Test
   public void testToString() {
     assertEquals("Quiz Controller", qc.toString());
   }
 
+
+  @Test
+  public void testConstructor() {
+    fail("Not Yet Implemented");
+  }
+
+  @Test
+  public void testLaunchQuizGame() {
+    fail("Not Yet Implemented");
+  }
+
+  // Write to file is successful
+  @Test
+  public void writeScores_Succeed() {
+    assertEquals(true, qc.writeScores());
+    fail("Not yet implemented");
+  }
+
+  // Write to file is unsuccessful
+  @Test
+  public void writeScores_Fail() {
+    assertEquals(false, qc.writeScores());
+    fail("Not yet Implemnted");
+  }
+
+  @Test
+  public void testDisplayNextQuestion() {
+    fail("not Yet Implemented");
+  }
+
+  // Test when the user has the right answer
+  @Test
+  public void testCheckAnswer_Correct() {
+    fail("Not Yet Implemented");
+  }
+
+  // Test when the user has the wrong answer
+  @Test
+  public void testCheckAnswer_Wrongt() {
+    fail("Not Yet Implemented");
+  }
+
+  @Test
+  public void testStartQuiz() {
+    fail("not Yet Implemented");
+  }
+
+  // Test a successful quiz load
+  @Test
+  public void testLoadQuiz_Successful() {
+    fail("Not Yet Implemnted");
+  }
+
+  // Test an unsuccessful quiz load
+  @Test
+  public void testLoadQuiz_Unsuccessful() {
+    fail("Not Yet Implemnted");
+  }
+
+  @Test
+  public void testUpdateScores() {
+    fail("Not Yet Implemented");
+  }
 }
+
