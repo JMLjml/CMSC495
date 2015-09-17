@@ -16,7 +16,8 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ Quiz_Tests.class, Quiz_Controller_Tests.class,})
+@SuiteClasses({ Quiz_Tests.class, Quiz_Controller_Tests.class, 
+                Question_Tests.class})
 
 public class All_Tests {
 

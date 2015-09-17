@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Question {
   
-  private enum QuestionTypeEnum {
+  public enum QuestionTypeEnum {
     MULTIPLE_CHOICE, TRUE_FALSE
   }
   
@@ -18,6 +18,8 @@ public class Question {
   public Question(QuestionTypeEnum questionType, String questionText,
       String answerText, ArrayList<String> multipleChoiceOptions) {
     
+    this.questionText = questionText;
+    this.answerText = answerText; 
   }
   
   public String getQuestionText() {
@@ -30,5 +32,9 @@ public class Question {
   
   public ArrayList<String> getMultipleChoiceOptions() {
     return this.multipleChoiceOptions;
+  }
+
+  public QuestionTypeEnum getQuestionType() {
+    return this.questionType;
   }
 }
