@@ -34,16 +34,23 @@ public class QuizView {
     private JButton btnDisplayNextQuestion;
     
     public QuizView()
+    //constructor
+    //added by: C.Ganier on 9/18/2015
+    //last updated by: C.Ganier on 9/18/2015
     {
         initialize();
     }
     
     public void setVisable(boolean visable)
+    //added by: C.Ganier on 9/18/2015
+    //last updated by: C.Ganier on 9/18/2015
     {
         this.frame.setVisible(visable);
     }
     
     private void initialize()
+    //added by: C.Ganier on 9/18/2015
+    //last updated by: C.Ganier on 9/18/2015
     {
         frame = new JFrame("QuizView");
         frame.setBounds(100, 100, 450, 300);
