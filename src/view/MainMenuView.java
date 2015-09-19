@@ -11,6 +11,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
 
 public class MainMenuView {
 
@@ -33,8 +34,8 @@ public class MainMenuView {
   }
   
   // Public helper method used to toggle viability of main menu
-  public void setVisable(boolean visable) {
-          this.frame.setVisible(visable);
+  public void setVisible(boolean visible) {
+          this.frame.setVisible(visible);
   }
   
 
@@ -43,13 +44,13 @@ public class MainMenuView {
    */
   public void initialize() {
     frame = new JFrame("Main Menu");
+//    frame.setLayout(BoxLayout());
     frame.setBounds(100, 100, 450, 300);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     
     // Playing around with buttons and action listeners
     btnQuit = new JButton("Quit");
-    
     frame.getContentPane().add(btnQuit, BorderLayout.WEST);
     btnQuit.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent e) {
@@ -60,13 +61,13 @@ public class MainMenuView {
     });  
     
     btnStart = new JButton("Start");
+    frame.getContentPane().add(btnStart, BorderLayout.EAST);    
     btnStart.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        setVisable(false);
+        System.out.println("You pressed the start button");          
+        setVisible(false);
         qController.launchQuizGame();
-        System.out.println("You pressed the start button");
       }
     });    
-    frame.getContentPane().add(btnStart, BorderLayout.EAST);
   }
 }

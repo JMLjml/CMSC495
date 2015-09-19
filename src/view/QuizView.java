@@ -41,11 +41,11 @@ public class QuizView {
         initialize();
     }
     
-    public void setVisable(boolean visable)
+    public void setVisible(boolean visible)
     //added by: C.Ganier on 9/18/2015
     //last updated by: C.Ganier on 9/18/2015
     {
-        this.frame.setVisible(visable);
+        this.frame.setVisible(visible);
     }
     
     public void initialize()
@@ -58,12 +58,15 @@ public class QuizView {
 
         // Playing around with buttons and action listeners
         btnQuit = new JButton("Quit");
+        
+        frame.getContentPane().add(btnQuit, BorderLayout.WEST);        
         btnQuit.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
+            frame.setVisible(false);
+            frame.dispose();
             System.out.println("You pressed the quit button");
           }
         });
-        frame.getContentPane().add(btnQuit, BorderLayout.WEST);
 
         btnCheckAnswer = new JButton("Check Answer");
         btnCheckAnswer.addActionListener(new ActionListener() {

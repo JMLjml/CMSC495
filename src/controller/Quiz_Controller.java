@@ -28,7 +28,7 @@ public class Quiz_Controller {
   
   public Quiz_Controller(MainMenuView _mainMenu) {
     this.mainMenu = _mainMenu;
-    mainMenu.setVisable(true);
+    mainMenu.setVisible(true);
     mainMenu.setControl(this);
 //    quizMenu = new QuizView();//added by cGanier
   }
@@ -36,17 +36,15 @@ public class Quiz_Controller {
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
-    quizMenu = new QuizView();//added by cGanier
+    quizMenu = new QuizView();//thsi line starts the quiz screen
     try 
     {
-      quizMenu.setVisable(true);
+      quizMenu.setVisible(true);
     } 
     catch (Exception e) 
     {
       e.printStackTrace();
     }
-    quizMenu.initialize();
-    
   };
   
  

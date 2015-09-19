@@ -15,8 +15,7 @@ public class Quiz_Application {
     mainMenu = new MainMenuView();
     qc = new Quiz_Controller(mainMenu);
     
-//    qc.launchQuizGame();
-/*
+/****    This just tests the quizview class  ***
     QuizView qv = new QuizView();  
     try 
     {
