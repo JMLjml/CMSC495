@@ -1,3 +1,4 @@
+/* Caroline Ganier */
 package view;
 
 import java.awt.EventQueue;
