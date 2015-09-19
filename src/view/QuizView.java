@@ -48,9 +48,9 @@ public class QuizView {
         this.frame.setVisible(visable);
     }
     
-    private void initialize()
+    public void initialize()
     //added by: C.Ganier on 9/18/2015
-    //last updated by: C.Ganier on 9/18/2015
+    //last updated by: C.Ganier on 9/18/2015; changed to public
     {
         frame = new JFrame("QuizView");
         frame.setBounds(100, 100, 450, 300);

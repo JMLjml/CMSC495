@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.awt.EventQueue;
 
 import view.MainMenuView;
+import view.QuizView;
 import model.Question;
 import model.Quiz;
 
@@ -23,25 +24,28 @@ public class Quiz_Controller {
   private ArrayList<Quiz> quizzes;
   private Question currQuestion;
   private MainMenuView mainMenu;
+  private QuizView quizMenu;//added by cGanier
   
-  public Quiz_Controller(MainMenuView mainMenu) {
-    this.mainMenu = mainMenu;
-    // TODO Auto-generated constructor stub
+  public Quiz_Controller(MainMenuView _mainMenu) {
+    this.mainMenu = _mainMenu;
+    mainMenu.setVisable(true);
+    mainMenu.setControl(this);
+//    quizMenu = new QuizView();//added by cGanier
   }
   
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
-    
     System.out.println("Launch the main menu view here");
-    
-    try {
-      
-      this.mainMenu.setVisable(true);
-      
-    } catch (Exception e) {
+    quizMenu = new QuizView();//added by cGanier
+    try 
+    {
+      quizMenu.setVisable(true);
+    } 
+    catch (Exception e) 
+    {
       e.printStackTrace();
     }
-    
+    quizMenu.initialize();
     
   };
   

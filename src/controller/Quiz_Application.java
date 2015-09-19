@@ -1,6 +1,7 @@
 package controller;
 
 import view.MainMenuView;
+import view.QuizView;
 
 public class Quiz_Application {
   
@@ -11,10 +12,21 @@ public class Quiz_Application {
    * Launch the application.
    */
   public static void main(String[] args) {
-    
     mainMenu = new MainMenuView();
     qc = new Quiz_Controller(mainMenu);
     
-    qc.launchQuizGame();
-  }
+//    qc.launchQuizGame();
+/*
+    QuizView qv = new QuizView();  
+    try 
+    {
+      qv.setVisable(true);
+    } 
+    catch (Exception e) 
+    {
+      e.printStackTrace();
+    }
+    qv.initialize();
+*/    
+  }     
 }
