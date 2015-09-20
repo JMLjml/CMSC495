@@ -37,7 +37,8 @@ public class Quiz_Controller {
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
-    quizMenu = new QuizView();//thsi line starts the quiz screen
+    quizMenu = new QuizView(this);//this line starts the quiz screen
+            
     try 
     {
       quizMenu.setVisible(true);
@@ -54,9 +55,14 @@ public class Quiz_Controller {
     return false;
   }
 
-  public void displayNextQuestion() {};
+  public void displayNextQuestion() 
+  {
+      System.out.println("Reached next question method");
+  }
+  
   
   public boolean checkAnswer(String answer) {
+      System.out.println("Answer: " + answer);
     return false;
   }
   
