@@ -1,0 +1,73 @@
+package view;
+
+import controller.Quiz_Controller;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
+import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
+
+public class MainMenuView {
+
+  private JFrame frame;
+  private JButton btnQuit, btnStart;
+  
+  private Quiz_Controller qController;
+  
+  /**
+   * Create the Main Menu View.
+   */
+  public MainMenuView() {
+    initialize();
+  }
+  
+  //test - cGanier
+  public void setControl(Quiz_Controller _qController)
+  {
+      qController = _qController;
+  }
+  
+  // Public helper method used to toggle viability of main menu
+  public void setVisible(boolean visible) {
+          this.frame.setVisible(visible);
+  }
+  
+
+  /**
+   * Initialize the contents of the frame.
+   */
+  public void initialize() {
+    frame = new JFrame("Main Menu");
+//    frame.setLayout(BoxLayout());
+    frame.setBounds(100, 100, 450, 300);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    
+    // Playing around with buttons and action listeners
+    btnQuit = new JButton("Quit");
+    frame.getContentPane().add(btnQuit, BorderLayout.WEST);
+    btnQuit.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        frame.setVisible(false);
+        frame.dispose();
+        System.out.println("You pressed the quit button");
+      }
+    });  
+    
+    btnStart = new JButton("Start");
+    frame.getContentPane().add(btnStart, BorderLayout.EAST);    
+    btnStart.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("You pressed the start button");          
+        setVisible(false);
+        qController.launchQuizGame();
+      }
+    });    
+  }
+}

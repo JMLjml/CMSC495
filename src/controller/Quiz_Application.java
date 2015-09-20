@@ -1,7 +1,8 @@
 package controller;
 
-import view.MainMenuView;
+import view.MainMenuView_old;
 import view.QuizView;
+import view.MainMenuView;
 
 public class Quiz_Application {
   
@@ -12,8 +13,8 @@ public class Quiz_Application {
    * Launch the application.
    */
   public static void main(String[] args) {
-    mainMenu = new MainMenuView();
-    qc = new Quiz_Controller(mainMenu);
+      mainMenu = new MainMenuView();
+      qc = new Quiz_Controller(mainMenu);
     
 /****    This just tests the quizview class  ***
     QuizView qv = new QuizView();  

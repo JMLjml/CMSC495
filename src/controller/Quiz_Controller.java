@@ -18,6 +18,7 @@ import view.MainMenuView;
 import view.QuizView;
 import model.Question;
 import model.Quiz;
+import view.MainMenuView;
 
 public class Quiz_Controller {
 
@@ -30,8 +31,8 @@ public class Quiz_Controller {
     this.mainMenu = _mainMenu;
     mainMenu.setVisible(true);
     mainMenu.setControl(this);
-//    quizMenu = new QuizView();//added by cGanier
   }
+    
   
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
