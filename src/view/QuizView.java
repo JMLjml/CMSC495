@@ -41,8 +41,9 @@ public class QuizView extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
 
         questionNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        questionNumberLabel.setText("Q1");
+        questionNumberLabel.setText("Q" + questionCounter);
 
+        //set initial question text to the first question
         questionLabel.setText("***Insert question here***");
 
         quitBtn.setText("End Quiz");
@@ -186,6 +187,8 @@ public class QuizView extends javax.swing.JFrame {
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayNextQuestionActionPerformed
         // TODO add your handling code here:
         System.out.println("You pressed the Next Question button");
+        questionCounter++;
+        questionNumberLabel.setText("Q" + questionCounter);
         qController.displayNextQuestion();
     }//GEN-LAST:event_btnDisplayNextQuestionActionPerformed
 
@@ -222,6 +225,8 @@ public class QuizView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private int questionCounter = 1;
+    
     // End of variables declaration//GEN-END:variables
     
     
