@@ -1,7 +1,13 @@
 package controller;
 
+import java.util.ArrayList;
+
 import view.QuizView;
 import view.MainMenuView;
+
+import model.Question;
+// delte this import, it wont be needed later
+import model.Quiz;
 
 public class Quiz_Application {
   
@@ -12,8 +18,25 @@ public class Quiz_Application {
   * Launch the application.
    */
   public static void main(String[] args) {
+    
+    /** 
+     * Just testing parsing here. delete this later
+     *  */
+    
+    Quiz quiz = new Quiz("Parsing Test");
+    quiz.parseQuestions();
+    
+    ArrayList<Question> questions = quiz.getQuestions();
+    
+    
+    
+    
+    
       mainMenu = new MainMenuView();
       qc = new Quiz_Controller(mainMenu);
+      
+     
+      
     
 /****    This just tests the quizview class  ***
     QuizView qv = new QuizView();  
