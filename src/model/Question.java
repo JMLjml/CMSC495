@@ -26,7 +26,7 @@ public class Question {
     return this.questionText;
   }
   
-  public String getAnswerText() {
+  public  String getAnswerText() {
     return this.answerText;
   }
   
@@ -34,7 +34,10 @@ public class Question {
     return this.multipleChoiceOptions;
   }
 
+
+  
   public QuestionTypeEnum getQuestionType() {
     return this.questionType;
   }
+
 }
