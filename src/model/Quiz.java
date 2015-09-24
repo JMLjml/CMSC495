@@ -5,7 +5,10 @@
  * 
  * Author(s):
  * 
- * John Lasheski - Basic design and initial method stub creation
+ * John Lasheski - Basic design and initial method stub creation, also contributed
+ *                 to the parsing method
+ * 
+ * Joe Dain - Parsing method and file IO
  * 
  */
 
