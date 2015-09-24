@@ -1,5 +1,6 @@
 package view;
 
+import java.util.ArrayList;
 import controller.Quiz_Controller;
 
 public class QuizView extends javax.swing.JFrame {
@@ -24,10 +25,10 @@ public class QuizView extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        questionNumberLabel = new javax.swing.JLabel();
+        questionLabel = new javax.swing.JLabel();
+        quitBtn = new javax.swing.JButton();
+        checkBtn = new javax.swing.JButton();
         btnDisplayNextQuestion = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -39,20 +40,20 @@ public class QuizView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 153, 233));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Q1");
+        questionNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        questionNumberLabel.setText("Q1");
 
-        jLabel2.setText("***Insert question here***");
+        questionLabel.setText("***Insert question here***");
 
-        jButton1.setText("Quit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        quitBtn.setText("End Quiz");
+        quitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Check Answer");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        checkBtn.setText("Check Answer");
+        checkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
@@ -107,21 +108,21 @@ public class QuizView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(quitBtn)
                 .addGap(290, 290, 290))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(checkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(146, 146, 146)
                         .addComponent(btnDisplayNextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,8 +137,8 @@ public class QuizView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -149,9 +150,9 @@ public class QuizView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnDisplayNextQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(checkBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(13, 13, 13)
-                .addComponent(jButton1)
+                .addComponent(quitBtn)
                 .addContainerGap())
         );
 
@@ -212,14 +213,70 @@ public class QuizView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisplayNextQuestion;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton quitBtn;
+    private javax.swing.JButton checkBtn;
+    private javax.swing.JLabel questionNumberLabel;
+    private javax.swing.JLabel questionLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     // End of variables declaration//GEN-END:variables
+    
+    
+    
+    //setters and getters for necessary GUI fields--Made by Bradley Wetzel
+    public void setQuestionLabel(String questionText){
+    	questionLabel.setText(questionText);
+    }
+    public String getQuestionLabel(){
+    	return questionLabel.getText();
+    }
+    
+    
+    //current question number
+    public void setQuestionNumberLabel(String questionNumber){
+    	questionNumberLabel.setText(questionNumber);
+    }
+    public String getQuestionNumberLabel(){
+    	return questionNumberLabel.getText();
+    }
+    
+    
+    //first answer
+    public void setRadioBtn1Text(String answerOneText){
+    	jRadioButton1.setText(answerOneText);
+    }
+    public String getRadioBtn1Text(){
+    	return jRadioButton1.getText();
+    }
+    
+    
+    //second answer
+    public void setRadioBtn2Text(String answerTwoText){
+    	jRadioButton2.setText(answerTwoText);
+    }
+    public String getRadioBtn2Text(){
+    	return jRadioButton2.getText();
+    }
+    
+    
+    //third answer
+    public void setRadioBtn3Text(String answerThreeText){
+    	jRadioButton3.setText(answerThreeText);
+    }
+    public String getRadioBtn3Text(){
+    	return jRadioButton3.getText();
+    }
+    
+    
+    //fourth answer
+    public void setRadioBtn4Text(String answerFourText){
+    	jRadioButton4.setText(answerFourText);
+    }
+    public String getRadioBtn4Text(){
+    	return jRadioButton4.getText();
+    }
+    
 }

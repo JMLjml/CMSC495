@@ -1,6 +1,6 @@
 M;The "Mini Triceratops", Koreaceratops, was a ceratopsian with a scaled down version of a Triceratops headgear and was thought to be about the size of a ____.; house cat; horse; a labrador; an elephant;C 
 T;The remains of Koreaceratops have been found in multiple locations in Australia.;F
-M;The Koreaceratops is thought to have been a(n)  _________.; omnivor; carnivor; herbivore;;D
+M;The Koreaceratops is thought to have been a(n)  _________.; omnivore; carnivore; herbivore;;D
 M;Koreaceratops was thought to be ____ and fairly fast.; bipedal; quadrupedal; soly aquatic; winged;A
 M;The Yi qi is thought to have existed during the _____ Jurassic period.; Upper/Late Jurassic; Early Cretaceous; Mid/Late Jurassic; Triassic;B
 M;Koreaceratops had a unique fan-shaped tail formed by long neural spines, which suggests it may have been a good _______.;flyer ;fighter;parent; swimmer;D
