@@ -5,9 +5,9 @@
  *      
  *      Created on:    9/18/2015 
  *      Created by:    Caroline Ganier
- *      Last Update:   9/24/2015
+ *      Last Update:   9/25/2015
  *      Updated by:    Caroline Ganier
- *      Update reason: Added comments
+ *      Update reason: updated comments
  *     
  *      Class Description:
  *          This class is responsible for creating and displaying the main menu
@@ -19,14 +19,13 @@
  * 
  * 
  ************/
-
 package view;
 
 import controller.Quiz_Controller;
 
 public class MainMenuView extends javax.swing.JFrame {
-    
-    private Quiz_Controller qController;//used to passes control to Quiz_COntrol for game launch
+    //variable declaration here and end end of class (for buttons)
+    private Quiz_Controller qController;
     
     public MainMenuView() 
     //Constructor. Calls initComponents to display Main Menu and sets visibility
@@ -36,7 +35,7 @@ public class MainMenuView extends javax.swing.JFrame {
     }
 
   public void setControl(Quiz_Controller _qController)
-  //Creates a access to the QuizController class from within MainMenuView.
+  //Creates access to the QuizController class from MainMenuView for game launch.
   {
       qController = _qController;
   }
