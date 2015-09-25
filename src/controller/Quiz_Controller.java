@@ -6,12 +6,13 @@
  * Author(s):
  * 
  * John Lasheski - Basic design and initial method stub creation
- * 
+ * Joseph Dain - nextQuestion Logic
  */
 
 package controller;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.awt.EventQueue;
 
 import view.MainMenuView;
@@ -27,6 +28,7 @@ public class Quiz_Controller {
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
   
+  
   public Quiz_Controller(MainMenuView _mainMenu) {
     this.mainMenu = _mainMenu;
     mainMenu.setVisible(true);
@@ -38,6 +40,7 @@ public class Quiz_Controller {
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
+    displayNextQuestion();
             
     try 
     {
@@ -55,9 +58,14 @@ public class Quiz_Controller {
     return false;
   }
 
-  public void displayNextQuestion() 
+  public static void displayNextQuestion() 
   {
       System.out.println("Reached next question method");
+      
+      Random rn = new Random();
+      int randQuestion = rn.nextInt(20 - 0 + 1) + 0;
+      
+      view.QuizView.setQuestionLabel(model.Quiz.getQuestions().get(randQuestion).getQuestionText());
   }
   
   
