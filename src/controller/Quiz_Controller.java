@@ -7,6 +7,7 @@
  * 
  * John Lasheski - Basic design and initial method stub creation
  * Joseph Dain - nextQuestion Logic
+ * Joseph Dain - checkAnswer Logic
  */
 
 package controller;
@@ -28,6 +29,8 @@ public class Quiz_Controller {
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
   
+  static Random rn = new Random();
+  static int randQuestion = rn.nextInt(20 - 0 + 1) + 0;
   
   public Quiz_Controller(MainMenuView _mainMenu) {
     this.mainMenu = _mainMenu;
@@ -60,17 +63,60 @@ public class Quiz_Controller {
 
   public static void displayNextQuestion() 
   {
-      System.out.println("Reached next question method");
+     
+	  System.out.println("Reached next question method");
       
-      Random rn = new Random();
-      int randQuestion = rn.nextInt(20 - 0 + 1) + 0;
+      ArrayList<String> currentMultipleChoiceOptions;
       
-      view.QuizView.setQuestionLabel(model.Quiz.getQuestions().get(randQuestion).getQuestionText());
+      Question currentQuestion;
+      currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
+    		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
+    		  model.Quiz.getQuestions().get(randQuestion).getAnswerText(), 
+    		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());
+      
+
+      view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
+      
+      currentMultipleChoiceOptions = model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions();    
+     
+      view.QuizView.setRadioBtn1Text(currentMultipleChoiceOptions.get(0));
+      view.QuizView.setRadioBtn2Text(currentMultipleChoiceOptions.get(1));
+      view.QuizView.setRadioBtn3Text(currentMultipleChoiceOptions.get(2));
+      view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));      
+      
   }
-  
-  
-  public boolean checkAnswer(String answer) {
-      System.out.println("Answer: " + answer);
+
+
+public boolean checkAnswer(String answer) {
+	
+	String answerVar = null;
+	
+	if(view.QuizView.getAnswer() == "1"){
+		answerVar = "A";
+	}
+	if(view.QuizView.getAnswer() == "2"){
+		answerVar = "B";
+	}
+	if(view.QuizView.getAnswer() == "3"){
+		answerVar = "C";
+	}
+	if(view.QuizView.getAnswer() == "4"){
+		answerVar = "D";
+	}
+	
+	System.out.println("answerVar: " + answerVar);
+	System.out.println("Actual Answer: " + model.Quiz.getQuestions().get(randQuestion).getAnswerText());
+	
+	if(answerVar.equalsIgnoreCase(model.Quiz.getQuestions().get(randQuestion).getAnswerText())){
+		//Add to score
+		System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
+		return true;
+	}else{
+		System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
+		//Dont add to score
+	}
+	
+      //System.out.println("Answer: " + answerVar);
     return false;
   }
   
