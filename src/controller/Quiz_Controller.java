@@ -30,7 +30,7 @@ public class Quiz_Controller {
   private QuizView quizMenu;//added by cGanier
   
   static Random rn = new Random();
-  static int randQuestion = rn.nextInt(20 - 0 + 1) + 0;
+  static int randQuestion = getRandomQuestionNumber();
   
   public Quiz_Controller(MainMenuView _mainMenu) {
     this.mainMenu = _mainMenu;
@@ -62,19 +62,28 @@ public class Quiz_Controller {
   }
 
   public static void displayNextQuestion() 
-  {
-     
-	  System.out.println("Reached next question method");
+  {  
       
       ArrayList<String> currentMultipleChoiceOptions;
       
       Question currentQuestion;
+      
+     
+    	  System.out.println("Reached next question method");
+      
       currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
     		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
     		  model.Quiz.getQuestions().get(randQuestion).getAnswerText(), 
-    		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());
+    		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());    
       
-
+      //Display questionType
+      System.out.println(currentQuestion.getQuestionType());
+      
+     //if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
+           
+     //view.QuizView.jRadioButton3.setVisible(true);
+   	  //view.QuizView.jRadioButton4.setVisible(true); 
+    	 
       view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
       
       currentMultipleChoiceOptions = model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions();    
@@ -82,7 +91,19 @@ public class Quiz_Controller {
       view.QuizView.setRadioBtn1Text(currentMultipleChoiceOptions.get(0));
       view.QuizView.setRadioBtn2Text(currentMultipleChoiceOptions.get(1));
       view.QuizView.setRadioBtn3Text(currentMultipleChoiceOptions.get(2));
-      view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));      
+      view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));     
+      
+      //Get new random question
+      randQuestion = getRandomQuestionNumber();
+     /* }else{
+    	  view.QuizView.setRadioBtn1Text("True");
+    	  view.QuizView.setRadioBtn2Text("False");
+    	  view.QuizView.jRadioButton3.setVisible(false);
+    	  view.QuizView.jRadioButton4.setVisible(false);
+    	  
+    	 //Get new random question
+          randQuestion = getRandomQuestionNumber();
+      }*/
       
   }
 
@@ -109,6 +130,7 @@ public boolean checkAnswer(String answer) {
 	
 	if(answerVar.equalsIgnoreCase(model.Quiz.getQuestions().get(randQuestion).getAnswerText())){
 		//Add to score
+		updateScores();
 		System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
 		return true;
 	}else{
@@ -126,9 +148,15 @@ public boolean checkAnswer(String answer) {
     return false;
   }
   
-  private void updateScores() {};
+  private void updateScores() {
+	  System.out.println("Getting ready to add score!");
+	  //model.Quiz.setScore();
+  };
   
-
+public static int getRandomQuestionNumber(){
+	return rn.nextInt(20) + 1;
+}
+  
   //Dummy Method to get unit testing working
   public String toString() {
     return "Quiz Controller";
