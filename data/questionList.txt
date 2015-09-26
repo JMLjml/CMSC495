@@ -10,7 +10,7 @@ M;Quetzelcoatlus was first discovered in __.; 1942; 1881; 1920; 1971;D
 M;Researchers believe that due to the nature of Stegosaurus legs, they had a maximum speed of around.; 5 MPH; 15 MPH; 20 MPH; 1 MPH;A
 M;The Stegosaurus was about ____ long.; 5 FT; 10 FT; 20 ft; 30 ft;D
 M;Yi qi was approximately the size of a(n) ____ .; Pigeon; Airplane; Ostrich; Humming bird;A
-M;The only known specimen was found in which country?; Honduras; Yeman; France; China;D
+M;The only known Yi qi specimen was found in which country?; Honduras; Yeman; France; China;D
 M;The Yi qi is thought to have existed during the _____ period.; Early Jurassic; Lower Cretaceous; Mid/Late Jurassic; Triassic;C
 M;Brachiosaurus is a sauropod. This means what?; It had a long neck; It was quadrapedal(walked on all four legs); It was a herbivore; All of the above;D
 M;Brachiosaurus had ___ bones inside of its neck:; 10; 12; 14; 15;B
@@ -38,4 +38,3 @@ T;The largest dinosaur eggs could be over 10 liters.;T
 T;A single Brachiosaurus would eat over 200lbs of foilage per day.;T
 T;Brachiosaurus and all other sauropod dinosaurs were cold-blooded animals.;F
 T;Brachiosaurus lived in North America.;T
-

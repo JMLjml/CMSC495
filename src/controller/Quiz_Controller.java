@@ -68,8 +68,10 @@ public class Quiz_Controller {
       
       Question currentQuestion;
       
-     
     	  System.out.println("Reached next question method");
+    	  
+    	  //move up from line 97--Bradley Wetzel
+    	  randQuestion = getRandomQuestionNumber();
       
       currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
     		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
@@ -94,7 +96,7 @@ public class Quiz_Controller {
       view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));     
       
       //Get new random question
-      randQuestion = getRandomQuestionNumber();
+      
      /* }else{
     	  view.QuizView.setRadioBtn1Text("True");
     	  view.QuizView.setRadioBtn2Text("False");
