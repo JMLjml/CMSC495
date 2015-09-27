@@ -38,9 +38,6 @@ public class Quiz_Tests {
   public void tearDown() throws Exception {
   }
 
-  
-
-
   @Test
   public void testToString() {
     assertEquals("DUMMY", quiz.toString());
@@ -49,12 +46,13 @@ public class Quiz_Tests {
   @Test
   public void testConstructor() {
       assertEquals("DUMMY", quiz.toString());
-      assertEquals(null, quiz.getQuestions());
+      assertEquals(0, quiz.getScore());
   }
   
   @Test
   public void testParseQuestions() {
-    fail("Not yet implemented");
+    quiz.parseQuestions();
+    assertNotEquals(null, quiz.getQuestions());
   }
   
   @Test
@@ -67,7 +65,7 @@ public class Quiz_Tests {
   public void testSetScore() {
     Quiz ScoreTestQuiz = new Quiz("ScoreTest");
     assertEquals(0, ScoreTestQuiz.getScore());
-    ScoreTestQuiz.setScore(7);
-    assertEquals(7, ScoreTestQuiz.getScore());
+    ScoreTestQuiz.setScore();
+    assertEquals(1, ScoreTestQuiz.getScore());
   }
 }
