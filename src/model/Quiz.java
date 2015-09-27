@@ -34,6 +34,7 @@ public class Quiz {
   public Quiz(String name) {
     this.name = name;
     this.questions = new ArrayList<Question>();
+    parseQuestions();
   }
   
 

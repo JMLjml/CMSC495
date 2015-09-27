@@ -19,12 +19,14 @@ import java.awt.EventQueue;
 import view.MainMenuView;
 import view.QuizView;
 import model.Question;
+import model.Question.QuestionTypeEnum;
 import model.Quiz;
 import view.MainMenuView;
 
 public class Quiz_Controller {
 
-  private ArrayList<Quiz> quizzes;
+  //private ArrayList<Quiz> quizzes;
+  private static Quiz quiz;
   private Question currQuestion;
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
@@ -37,6 +39,7 @@ public class Quiz_Controller {
     this.mainMenu = _mainMenu;
     mainMenu.setVisible(true);
     mainMenu.setControl(this);
+    this.quiz = new Quiz("Random");
   }
     
   
@@ -62,52 +65,45 @@ public class Quiz_Controller {
     return false;
   }
 
-  public static void displayNextQuestion() 
-  {        
-      ArrayList<String> currentMultipleChoiceOptions;
-     
-    	  System.out.println("Reached next question method");
+  public static void displayNextQuestion() {
+    System.out.println("Reached next question method");
     	  
-    	//Get new random question
-          randQuestion = getRandomQuestionNumber();
+    // Get new random question
+    randQuestion = getRandomQuestionNumber();
       
-          
-        //make the currentQuestion based on the random question number
-      currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
-    		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
-    		  model.Quiz.getQuestions().get(randQuestion).getAnswerText(), 
-    		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());    
-  
+    currentQuestion = quiz.getQuestion(randQuestion);
+    
+    //Display questionType
+    System.out.println(currentQuestion.getQuestionType());
       
-      //Display questionType
-      System.out.println(currentQuestion.getQuestionType());
+    //if the current question is multiple choice
+    if(currentQuestion.getQuestionType() == QuestionTypeEnum.MULTIPLE_CHOICE) {
       
-      //if the current question is multiple choice
-     if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
-           
+      // make buttons 3 and 4 show up
       view.QuizView.jRadioButton3.setVisible(true);
    	  view.QuizView.jRadioButton4.setVisible(true); 
     	 
+   	  // read in the question text
       view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
       
+      // set the text for multiple choice options     
+      view.QuizView.setRadioBtn1Text(currentQuestion.getMultipleChoiceOptions().get(0));
+      view.QuizView.setRadioBtn2Text(currentQuestion.getMultipleChoiceOptions().get(1));
+      view.QuizView.setRadioBtn3Text(currentQuestion.getMultipleChoiceOptions().get(2));
+      view.QuizView.setRadioBtn4Text(currentQuestion.getMultipleChoiceOptions().get(3));
       
-      currentMultipleChoiceOptions = model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions();    
-     
-      view.QuizView.setRadioBtn1Text(currentMultipleChoiceOptions.get(0));
-      view.QuizView.setRadioBtn2Text(currentMultipleChoiceOptions.get(1));
-      view.QuizView.setRadioBtn3Text(currentMultipleChoiceOptions.get(2));
-      view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));     
+    
+    } else {
       
-     
-      }else{
-    	 view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
+      // read in the question text
+      view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
     	  
-    	  view.QuizView.setRadioBtn1Text("True");
-    	  view.QuizView.setRadioBtn2Text("False");
-    	  view.QuizView.jRadioButton3.setVisible(false);
-    	  view.QuizView.jRadioButton4.setVisible(false);
-      }
-      
+      // label the buttons true false and hide the rest
+    	view.QuizView.setRadioBtn1Text("True");
+    	view.QuizView.setRadioBtn2Text("False");
+    	view.QuizView.jRadioButton3.setVisible(false);
+    	view.QuizView.jRadioButton4.setVisible(false);
+    }
   }
 
 

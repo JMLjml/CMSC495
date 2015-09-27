@@ -1,3 +1,14 @@
+/** 
+ * Quiz_Application.java
+ * 
+ * Runs and contains the main methofd for the Dino Quiz application.
+ * 
+ * Author(s):
+ * 
+ * John Lasheski
+ * Caroline Ganier
+ * 
+ */
 package controller;
 
 import java.util.ArrayList;
@@ -18,33 +29,7 @@ public class Quiz_Application {
   * Launch the application.
    */
   public static void main(String[] args) {
-    
-    /** 
-     * Just testing parsing here. delete this later
-     *  */
-    
-    Quiz quiz = new Quiz("Parsing Test");
-    quiz.parseQuestions();
-
-    ArrayList<Question> questions = quiz.getQuestions();
-    
-   
       mainMenu = new MainMenuView();
       qc = new Quiz_Controller(mainMenu);
-      
-      
-    
-/****    This just tests the quizview class  ***
-    QuizView qv = new QuizView();  
-    try 
-    {
-      qv.setVisable(true);
-    } 
-    catch (Exception e) 
-    {
-      e.printStackTrace();
-    }
-    qv.initialize();
-*/    
   }     
 }

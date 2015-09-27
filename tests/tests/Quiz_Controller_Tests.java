@@ -62,14 +62,12 @@ public class Quiz_Controller_Tests {
   @Test
   public void writeScores_Succeed() {
     assertEquals(true, qc.writeScores());
-    fail("Not yet implemented");
   }
 
   // Write to file is unsuccessful
   @Test
   public void writeScores_Fail() {
     assertEquals(false, qc.writeScores());
-    fail("Not yet Implemnted");
   }
 
   @Test
