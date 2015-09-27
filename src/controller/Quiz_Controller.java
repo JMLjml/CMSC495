@@ -108,7 +108,19 @@ public class Quiz_Controller {
 
 
 public boolean checkAnswer(String answer) {
+  
+  if(answer.equals(currentQuestion.getAnswerText())) {
+    System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
+    updateScores();
+    return true;    
+  } else {
+    System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
+    //Dont add to score
+    return false;    
+  }
+}
 	
+  /*
 	String answerVar = null;
 	
 	if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
@@ -151,14 +163,13 @@ public boolean checkAnswer(String answer) {
   }
 	//Display score
 	//System.out.println(model.Quiz.getScore());
-}  
-
-  public void startQuiz(String name) {};
-
-  private boolean loadQuiz(String name) {
-    return false;
-  }
+	 * 
+	 * 
+	 */
   
+ 
+
+   
   private void updateScores() {
 	  System.out.println("Getting ready to add score!");
 	  model.Quiz.setScore();

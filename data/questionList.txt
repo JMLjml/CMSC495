@@ -18,23 +18,23 @@ M;Nigersaurus was a unique sauropod which did what?; Stood on its hind legs; Ate
 M;Dinosaur means "_____ lizard" in Greek.; Giant; Terrible; Old; Scary;B
 M;The word "Coprolite" is the scientific term for what?; Dinosaur poop; Dinosaur teeth; Dinosaur toe nails; Dinosaur feathers;A
 M;Some sauropods like Brachiosaurus did what to help with digestion?; Wave their tail; Slept 18 hours per day; Ate rocks; Roll around on their backs;C
-T;The remains of Koreaceratops have been found in multiple locations in Australia.;F
-T;Koreaceratops is notable for the tall, bioluminescent, neural spines on its caudal vertebrae.;F
-T;Most of the horned dinosaurs of the world, including koreaceratops, have been found on the korean subcontinent.;F
-T;Quetzelcoatlus was from the Late Cretaceous of North America, and the largest known flying animal to have ever lived.;T
-T;Quetzelcoatlus was a member of the Azhdarchidae, a family of advanced toothless pterosaurs with unusually long, stiffened necks.;T
-T;Quetzelcoatlus is the largest known animal to have ever been able to fly.;T
-T;Geology student Douglas A. Lawson is credited with having discovered Quetzelcoatlus.;T
-T;Quetzelcoatlus ate mostly fish and crustaceans.;F
-T;Studies have shown that Quetzalcoatlus could take off under its own power, but once aloft it may have spent much of its time soaring.;T
-T;The Stegosaurus was alive in the late Jurrassic Period (around 150 million years ago).;T
-T;The Stegosaurus was a carnivore.;F
-T;The Stegosaurus had 17 plates along its back.;T
-T;Yi qi is the shortest binomial name yet published for any dinosaur.;T
-T;The Yi qi is a member of the Scansoriopterygidae group consisting of dinosaurs that are thought to be small, arboreal gliders.;T
-T;The Yi qi had brightly colored, feather covered wings.;F
-T;Brachiosaurus was originally thought to live underwater, using its neck to reach food at the sea floor, and its nose on top of its skull to reach above the T;water to breathe.;T
-T;The largest dinosaur eggs could be over 10 liters.;T
-T;A single Brachiosaurus would eat over 200lbs of foilage per day.;T
-T;Brachiosaurus and all other sauropod dinosaurs were cold-blooded animals.;F
-T;Brachiosaurus lived in North America.;T
+T;The remains of Koreaceratops have been found in multiple locations in Australia.;B
+T;Koreaceratops is notable for the tall, bioluminescent, neural spines on its caudal vertebrae.;B
+T;Most of the horned dinosaurs of the world, including koreaceratops, have been found on the korean subcontinent.;B
+T;Quetzelcoatlus was from the Late Cretaceous of North America, and the largest known flying animal to have ever lived.;A
+T;Quetzelcoatlus was a member of the Azhdarchidae, a family of advanced toothless pterosaurs with unusually long, stiffened necks.;A
+T;Quetzelcoatlus is the largest known animal to have ever been able to fly.;A
+T;Geology student Douglas A. Lawson is credited with having discovered Quetzelcoatlus.;A
+T;Quetzelcoatlus ate mostly fish and crustaceans.;B
+T;Studies have shown that Quetzalcoatlus could take off under its own power, but once aloft it may have spent much of its time soaring.;A
+T;The Stegosaurus was alive in the late Jurrassic Period (around 150 million years ago).;A
+T;The Stegosaurus was a carnivore.;B
+T;The Stegosaurus had 17 plates along its back.;A
+T;Yi qi is the shortest binomial name yet published for any dinosaur.;A
+T;The Yi qi is a member of the Scansoriopterygidae group consisting of dinosaurs that are thought to be small, arboreal gliders.;A
+T;The Yi qi had brightly colored, feather covered wings.;B
+T;Brachiosaurus was originally thought to live underwater, using its neck to reach food at the sea floor, and its nose on top of its skull to reach above the T;water to breathe.;A
+T;The largest dinosaur eggs could be over 10 liters.;A
+T;A single Brachiosaurus would eat over 200lbs of foilage per day.;A
+T;Brachiosaurus and all other sauropod dinosaurs were cold-blooded animals.;B
+T;Brachiosaurus lived in North America.;A

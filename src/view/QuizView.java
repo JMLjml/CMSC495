@@ -218,6 +218,7 @@ public class QuizView extends javax.swing.JFrame {
         //be "0" (answer initialized to "0" in constructor; reset at method end
         System.out.println("You pressed the Check Answer button");
         qController.checkAnswer(answer);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayNextQuestionActionPerformed
@@ -230,22 +231,22 @@ public class QuizView extends javax.swing.JFrame {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-        answer = "1";
+        answer = "A";
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
-        answer = "2";
+        answer = "B";
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
-        answer = "3";
+        answer = "C";
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
-        answer = "4";
+        answer = "D";
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
 
