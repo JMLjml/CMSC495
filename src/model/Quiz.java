@@ -48,7 +48,7 @@ public String toString() {
 	        BufferedReader br = null;
 	        String strLine = "";
 	        try {
-	            br = new BufferedReader( new FileReader("allQ.txt"));
+	            br = new BufferedReader( new FileReader("questionList.txt"));
 	            while( (strLine = br.readLine()) != null){
 	              
 	              Question question;
