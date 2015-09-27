@@ -12,6 +12,9 @@
 package tests;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import model.Question;
 import model.Question.QuestionTypeEnum;
 
@@ -23,17 +26,22 @@ public class Question_Tests {
   
   Question question;
   String questionText;
-  String answerText; 
+  String answerText;
+  ArrayList<String> multipleChoiceOptions = new ArrayList<String>();
   
   /**
    * @throws java.lang.Exception
    */
   @Before
   public void setUp() throws Exception {
-    this.questionText = new String("What is the name of the dino?");
-    this.answerText = new String("T-Rex");
-    this.question = new Question(QuestionTypeEnum.TRUE_FALSE, 
-                                 this.questionText, this.answerText, null);
+    this.questionText = new String("The Koreaceratops is thought to have been a(n)  _________.");
+    this.answerText = new String("D");
+    this.multipleChoiceOptions.add("omnivore");
+    this.multipleChoiceOptions.add("carnivore");
+    this.multipleChoiceOptions.add("herbivore");
+    this.multipleChoiceOptions.add("strong swimmer");
+    this.question = new Question(QuestionTypeEnum.MULTIPLE_CHOICE, 
+                                 this.questionText, this.answerText, this.multipleChoiceOptions);
   }
 
   /**
@@ -44,29 +52,30 @@ public class Question_Tests {
   }
 
   @Test
-  public void testConstructor() {
-      fail("Not yet Implemented");
-  }
-
-  @Test
   public void testGetQuestionText() {
-    String expected = new String("What is the name of the dino?");
+    String expected = new String("The Koreaceratops is thought to have been a(n)  _________.");
     assertEquals(expected, this.question.getQuestionText());
   }
 
   @Test
   public void testGetAnswerText() {
-    String expected = new String("T-Rex");
+    String expected = new String("D");
     assertEquals(expected, this.question.getAnswerText());
   }
 
   @Test
   public void testGetMultipleChoiceOptions() {
-    fail("Not Yet Implemented");
+    ArrayList<String> expected = new ArrayList<String>();
+    expected.add("omnivore");
+    expected.add("carnivore");
+    expected.add("herbivore");
+    expected.add("strong swimmer");
+    assertEquals(expected, this.question.getMultipleChoiceOptions());
   }
 
   @Test
   public void testGetQuestionType() {
-      fail("Not Yet Implemented");
+      QuestionTypeEnum expected = QuestionTypeEnum.MULTIPLE_CHOICE;
+      assertEquals(expected, this.question.getQuestionType());
   }
 }
