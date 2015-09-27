@@ -28,7 +28,7 @@ import controller.Quiz_Controller;;
 
 public class Quiz {
   private String name;
-  private int score = 0;
+  private static int score = 0;
   private static ArrayList<Question> questions;  
    
   public Quiz(String name) {
@@ -48,7 +48,7 @@ public String toString() {
 	        BufferedReader br = null;
 	        String strLine = "";
 	        try {
-	            br = new BufferedReader( new FileReader("testFile.txt"));
+	            br = new BufferedReader( new FileReader("allQ.txt"));
 	            while( (strLine = br.readLine()) != null){
 	              
 	              Question question;
@@ -114,8 +114,8 @@ public String toString() {
     return this.score;
   }
   
-  public void setScore(int score) {
-    this.score = score;
+  public static void setScore() {
+    score++;
   }
   
  

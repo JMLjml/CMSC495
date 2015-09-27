@@ -31,6 +31,7 @@ public class Quiz_Controller {
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
+  static Question currentQuestion;
   
   public Quiz_Controller(MainMenuView _mainMenu) {
     this.mainMenu = _mainMenu;
@@ -62,29 +63,26 @@ public class Quiz_Controller {
   }
 
   public static void displayNextQuestion() 
-  {  
-      
+  {        
       ArrayList<String> currentMultipleChoiceOptions;
-      
-      Question currentQuestion;
-      
+     
     	  System.out.println("Reached next question method");
-    	  
-    	  //move up from line 97--Bradley Wetzel
-    	  randQuestion = getRandomQuestionNumber();
       
       currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
     		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
     		  model.Quiz.getQuestions().get(randQuestion).getAnswerText(), 
     		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());    
       
+      //Get new random question
+      randQuestion = getRandomQuestionNumber();
+      
       //Display questionType
       System.out.println(currentQuestion.getQuestionType());
       
-     //if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
+     if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
            
-     //view.QuizView.jRadioButton3.setVisible(true);
-   	  //view.QuizView.jRadioButton4.setVisible(true); 
+      view.QuizView.jRadioButton3.setVisible(true);
+   	  view.QuizView.jRadioButton4.setVisible(true); 
     	 
       view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
       
@@ -95,9 +93,10 @@ public class Quiz_Controller {
       view.QuizView.setRadioBtn3Text(currentMultipleChoiceOptions.get(2));
       view.QuizView.setRadioBtn4Text(currentMultipleChoiceOptions.get(3));     
       
-      //Get new random question
-      
-     /* }else{
+     
+      }else{
+    	 view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
+    	  
     	  view.QuizView.setRadioBtn1Text("True");
     	  view.QuizView.setRadioBtn2Text("False");
     	  view.QuizView.jRadioButton3.setVisible(false);
@@ -105,7 +104,7 @@ public class Quiz_Controller {
     	  
     	 //Get new random question
           randQuestion = getRandomQuestionNumber();
-      }*/
+      }
       
   }
 
@@ -114,17 +113,26 @@ public boolean checkAnswer(String answer) {
 	
 	String answerVar = null;
 	
-	if(view.QuizView.getAnswer() == "1"){
-		answerVar = "A";
-	}
-	if(view.QuizView.getAnswer() == "2"){
-		answerVar = "B";
-	}
-	if(view.QuizView.getAnswer() == "3"){
-		answerVar = "C";
-	}
-	if(view.QuizView.getAnswer() == "4"){
-		answerVar = "D";
+	if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
+		if(view.QuizView.getAnswer() == "1"){
+			answerVar = "A";
+		}
+		if(view.QuizView.getAnswer() == "2"){
+			answerVar = "B";
+		}
+		if(view.QuizView.getAnswer() == "3"){
+			answerVar = "C";
+		}
+		if(view.QuizView.getAnswer() == "4"){
+			answerVar = "D";
+		}
+	}else{
+		if(view.QuizView.getAnswer() == "1"){
+			answerVar = "T";
+		}
+		if(view.QuizView.getAnswer() == "2"){
+			answerVar = "F";
+		}
 	}
 	
 	System.out.println("answerVar: " + answerVar);
@@ -134,16 +142,19 @@ public boolean checkAnswer(String answer) {
 		//Add to score
 		updateScores();
 		System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
+		updateScores();
 		return true;
 	}else{
 		System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
 		//Dont add to score
-	}
 	
       //System.out.println("Answer: " + answerVar);
     return false;
   }
-  
+	//Display score
+	//System.out.println(model.Quiz.getScore());
+}  
+
   public void startQuiz(String name) {};
 
   private boolean loadQuiz(String name) {
@@ -152,11 +163,12 @@ public boolean checkAnswer(String answer) {
   
   private void updateScores() {
 	  System.out.println("Getting ready to add score!");
-	  //model.Quiz.setScore();
+	  model.Quiz.setScore();
+	  
   };
   
 public static int getRandomQuestionNumber(){
-	return rn.nextInt(20) + 1;
+	return rn.nextInt(40) + 1;
 }
   
   //Dummy Method to get unit testing working
