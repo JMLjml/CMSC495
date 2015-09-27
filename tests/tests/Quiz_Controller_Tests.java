@@ -48,15 +48,7 @@ public class Quiz_Controller_Tests {
   }
 
 
-  @Test
-  public void testConstructor() {
-    fail("Not Yet Implemented");
-  }
 
-  @Test
-  public void testLaunchQuizGame() {
-    fail("Not Yet Implemented");
-  }
 
   // Write to file is successful
   @Test
@@ -70,10 +62,6 @@ public class Quiz_Controller_Tests {
     assertEquals(false, qc.writeScores());
   }
 
-  @Test
-  public void testDisplayNextQuestion() {
-    fail("not Yet Implemented");
-  }
 
   // Test when the user has the right answer
   @Test
@@ -87,23 +75,7 @@ public class Quiz_Controller_Tests {
     fail("Not Yet Implemented");
   }
 
-  @Test
-  public void testStartQuiz() {
-    fail("not Yet Implemented");
-  }
-
-  // Test a successful quiz load
-  @Test
-  public void testLoadQuiz_Successful() {
-    fail("Not Yet Implemnted");
-  }
-
-  // Test an unsuccessful quiz load
-  @Test
-  public void testLoadQuiz_Unsuccessful() {
-    fail("Not Yet Implemnted");
-  }
-
+  
   @Test
   public void testUpdateScores() {
     fail("Not Yet Implemented");
