@@ -118,7 +118,7 @@ public String toString() {
     score++;
   }
   
- 
-  
- 
+  public Question getQuestion(int index) {
+    return questions.get(index);
+  } 
 }
