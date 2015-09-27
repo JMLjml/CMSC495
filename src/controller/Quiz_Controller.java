@@ -107,80 +107,28 @@ public class Quiz_Controller {
   }
 
 
-public boolean checkAnswer(String answer) {
+  public boolean checkAnswer(String answer) {
   
-  if(answer.equals(currentQuestion.getAnswerText())) {
-    System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
-    updateScores();
-    return true;    
-  } else {
-    System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
-    //Dont add to score
-    return false;    
+    if(answer.equals(currentQuestion.getAnswerText())) {
+      System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
+      updateScores();
+      return true;    
+    } else {
+      System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
+      //Dont add to score
+      return false;    
+    }
   }
-}
-	
-  /*
-	String answerVar = null;
-	
-	if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
-		if(view.QuizView.getAnswer() == "1"){
-			answerVar = "A";
-		}
-		if(view.QuizView.getAnswer() == "2"){
-			answerVar = "B";
-		}
-		if(view.QuizView.getAnswer() == "3"){
-			answerVar = "C";
-		}
-		if(view.QuizView.getAnswer() == "4"){
-			answerVar = "D";
-		}
-	}else{
-		if(view.QuizView.getAnswer() == "1"){
-			answerVar = "T";
-		}
-		if(view.QuizView.getAnswer() == "2"){
-			answerVar = "F";
-		}
-	}
-	
-	System.out.println("answerVar: " + answerVar);
-	System.out.println("Actual Answer: " + model.Quiz.getQuestions().get(randQuestion).getAnswerText());
-	
-	if(answerVar.equalsIgnoreCase(model.Quiz.getQuestions().get(randQuestion).getAnswerText())){
-		//Add to score
-		updateScores();
-		System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
-		updateScores();
-		return true;
-	}else{
-		System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
-		//Dont add to score
-	
-      //System.out.println("Answer: " + answerVar);
-    return false;
-  }
-	//Display score
-	//System.out.println(model.Quiz.getScore());
-	 * 
-	 * 
-	 */
-  
- 
-
-   
+	   
   private void updateScores() {
 	  System.out.println("Getting ready to add score!");
-	  model.Quiz.setScore();
-	  
-  };
-  
+	  model.Quiz.setScore();	  
+  }  
   
   //generates random number from 0 to 39
-public static int getRandomQuestionNumber(){
-	return rn.nextInt(39) + 1;
-}
+  public static int getRandomQuestionNumber(){
+    return rn.nextInt(39) + 1;
+  }
   
   //Dummy Method to get unit testing working
   public String toString() {
