@@ -67,24 +67,29 @@ public class Quiz_Controller {
       ArrayList<String> currentMultipleChoiceOptions;
      
     	  System.out.println("Reached next question method");
+    	  
+    	//Get new random question
+          randQuestion = getRandomQuestionNumber();
       
+          
+        //make the currentQuestion based on the random question number
       currentQuestion = new Question(model.Quiz.getQuestions().get(randQuestion).getQuestionType(),
     		  model.Quiz.getQuestions().get(randQuestion).getQuestionText(), 
     		  model.Quiz.getQuestions().get(randQuestion).getAnswerText(), 
     		  model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions());    
-      
-      //Get new random question
-      randQuestion = getRandomQuestionNumber();
+  
       
       //Display questionType
       System.out.println(currentQuestion.getQuestionType());
       
+      //if the current question is multiple choice
      if(model.Quiz.getQuestions().get(randQuestion).getQuestionType().toString() == "MULTIPLE_CHOICE"){
            
       view.QuizView.jRadioButton3.setVisible(true);
    	  view.QuizView.jRadioButton4.setVisible(true); 
     	 
       view.QuizView.setQuestionLabel(currentQuestion.getQuestionText());
+      
       
       currentMultipleChoiceOptions = model.Quiz.getQuestions().get(randQuestion).getMultipleChoiceOptions();    
      
@@ -101,9 +106,6 @@ public class Quiz_Controller {
     	  view.QuizView.setRadioBtn2Text("False");
     	  view.QuizView.jRadioButton3.setVisible(false);
     	  view.QuizView.jRadioButton4.setVisible(false);
-    	  
-    	 //Get new random question
-          randQuestion = getRandomQuestionNumber();
       }
       
   }
@@ -167,8 +169,10 @@ public boolean checkAnswer(String answer) {
 	  
   };
   
+  
+  //generates random number from 0 to 39
 public static int getRandomQuestionNumber(){
-	return rn.nextInt(40) + 1;
+	return rn.nextInt(39) + 1;
 }
   
   //Dummy Method to get unit testing working
