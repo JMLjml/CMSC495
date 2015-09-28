@@ -224,6 +224,7 @@ public class QuizView extends javax.swing.JFrame {
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayNextQuestionActionPerformed
         // TODO add your handling code here:
         System.out.println("You pressed the Next Question button");
+        buttonGroup1.clearSelection();
         questionCounter++;
         questionNumberLabel.setText("Q" + questionCounter);
         qController.displayNextQuestion();
