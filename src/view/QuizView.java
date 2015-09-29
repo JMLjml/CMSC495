@@ -25,8 +25,10 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 
 import controller.Quiz_Controller;
+import javax.swing.UIManager;
 
 public class QuizView extends javax.swing.JFrame {
 
@@ -42,7 +44,8 @@ public class QuizView extends javax.swing.JFrame {
         qController = _qController;
         initComponents();
     }
-    public static JLabel questionLabel1 = new JLabel();
+
+    public static JTextArea jtaAnswerField = new JTextArea(2, 20);
     public static JRadioButton jRadioButton1 = new JRadioButton();
     public static JRadioButton jRadioButton2 = new JRadioButton();
     public static JRadioButton jRadioButton3 = new JRadioButton();
@@ -74,7 +77,15 @@ public class QuizView extends javax.swing.JFrame {
         questionNumberLabel.setText("Q" + questionCounter);
 
         //set initial question text to the first question
-        questionLabel1.setText("***Insert question here***");
+        jtaAnswerField.setText("***Insert question here***");
+        jtaAnswerField.setWrapStyleWord(true);
+        jtaAnswerField.setLineWrap(true);
+        jtaAnswerField.setOpaque(false);
+        jtaAnswerField.setEditable(false);
+        jtaAnswerField.setFocusable(false);
+        jtaAnswerField.setBackground(UIManager.getColor("Label.backgroud"));
+        jtaAnswerField.setFont(UIManager.getFont("Label.font"));
+        jtaAnswerField.setBorder(UIManager.getBorder("Label.border"));
 
         quitBtn.setText("End Quiz");
         quitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +164,7 @@ public class QuizView extends javax.swing.JFrame {
                         .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(questionLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtaAnswerField, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +180,7 @@ public class QuizView extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(questionLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtaAnswerField, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -257,7 +268,6 @@ public class QuizView extends javax.swing.JFrame {
     private javax.swing.JButton quitBtn;
     private javax.swing.JButton checkBtn;
     private javax.swing.JLabel questionNumberLabel;
-    //private static javax.swing.JLabel questionLabel1;
     private javax.swing.JPanel jPanel1;
     //private javax.swing.JRadioButton jRadioButton1;
     //private javax.swing.JRadioButton jRadioButton2;
@@ -271,10 +281,10 @@ public class QuizView extends javax.swing.JFrame {
     
     //setters and getters for necessary GUI fields--Made by Bradley Wetzel
     public static void setQuestionLabel(String questionText){
-    	questionLabel1.setText(questionText);
+        jtaAnswerField.setText(questionText);
     }
     public String getQuestionLabel(){
-    	return questionLabel1.getText();
+        return jtaAnswerField.getText();
     }
     
     
