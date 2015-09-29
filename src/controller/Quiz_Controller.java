@@ -15,6 +15,8 @@ package controller;
 import java.util.ArrayList;
 import java.util.Random;
 import java.awt.EventQueue;
+import javax.swing.JOptionPane;//added by cGanier
+import javax.swing.JPanel;
 
 import view.MainMenuView;
 import view.QuizView;
@@ -41,7 +43,6 @@ public class Quiz_Controller {
     mainMenu.setControl(this);
     this.quiz = new Quiz("Random");
   }
-    
   
   public void launchQuizGame() {
     System.out.println("This is the main entry point for the whole system");
@@ -59,7 +60,11 @@ public class Quiz_Controller {
     }
   };
   
- 
+ public void scorePopUp(JPanel _jPan)
+ //causes a pop up with #correct/#answered and an okay button
+ {
+     JOptionPane.showMessageDialog(_jPan,"score goes here");
+ }
   
   public boolean writeScores() {
     return false;
