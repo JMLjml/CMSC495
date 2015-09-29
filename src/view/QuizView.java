@@ -5,9 +5,9 @@
  *      
  *      Created on:    9/18/2015 
  *      Created by:    Caroline Ganier
- *      Last Update:   9/25/2015
+ *      Last Update:   9/28/2015
  *      Updated by:    Caroline Ganier
- *      Update reason: Added comments
+ *      Update reason: Changed answer field from label to JTA
  *     
  *      Class Description:
  *          This class is responsible for creating and displaying the game play
@@ -28,6 +28,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
 import controller.Quiz_Controller;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 public class QuizView extends javax.swing.JFrame {
@@ -45,7 +46,7 @@ public class QuizView extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static JTextArea jtaAnswerField = new JTextArea(2, 20);
+    public static JTextArea    jtaAnswerField = new JTextArea(3, 20);
     public static JRadioButton jRadioButton1 = new JRadioButton();
     public static JRadioButton jRadioButton2 = new JRadioButton();
     public static JRadioButton jRadioButton3 = new JRadioButton();
@@ -212,15 +213,15 @@ public class QuizView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         //This is the action section for the QuizView Quit button. Clicking the
         //quit button should cause the window to become invisable and be removed
         System.out.println("You pressed the quit button in the quizView");
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         //This is the action section for the Quiz Screen Check Answer button.  
         //clicking the button should send the value stored in 'answer' to 
         //control.Quiz_Controller.checkAanswer(String).  If answer is filled by
@@ -228,9 +229,14 @@ public class QuizView extends javax.swing.JFrame {
         //a String value of {1, 2, 3, 4}. If no answer was selcted, 'answer' will
         //be "0" (answer initialized to "0" in constructor; reset at method end
         System.out.println("You pressed the Check Answer button");
-        qController.checkAnswer(answer);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+        if (answer == "0")
+            JOptionPane.showMessageDialog(jPanel1,"Please select an answer first.");
+        else if (qController.checkAnswer(answer))
+                JOptionPane.showMessageDialog(jPanel1,"Correct Answer!");
+             else
+                JOptionPane.showMessageDialog(jPanel1,"Incorrecct Answer!");
+        answer = "0";
+    }
 
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayNextQuestionActionPerformed
         // TODO add your handling code here:
