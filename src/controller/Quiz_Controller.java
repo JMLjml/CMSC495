@@ -33,6 +33,7 @@ public class Quiz_Controller {
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
   private boolean gameLaunched = false;//added by cGanier
+  private int gamesLaunched = 0;//added by cGanier
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
@@ -47,6 +48,7 @@ public class Quiz_Controller {
   
   public void launchQuizGame() {
     gameLaunched = true;//added by cganier.  used in check score method.
+    gamesLaunched++;//added by cganier.  used in check score method.
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
@@ -66,18 +68,30 @@ public class Quiz_Controller {
  //causes a pop up with #correct/#answered and an okay button
  //added by cGanier
  {
-     if (gameLaunched)
-        JOptionPane.showMessageDialog(_jPan, this.getScore());
-     else
-         JOptionPane.showMessageDialog(_jPan, "You must start the game before checking your score.");
+     if (gamesLaunched > 1)//played more then onen game, list highest and current score
+         JOptionPane.showMessageDialog(_jPan, "You have played " + Integer.toString(gamesLaunched) 
+                 + " games.\n" + this.getHighScore() + this.getCurrentScore());
+     else 
+         if (gamesLaunched == 1)//one game has been played, list current score only
+            JOptionPane.showMessageDialog(_jPan, this.getCurrentScore());
+         else//no games played
+            JOptionPane.showMessageDialog(_jPan, "You must start the game before checking your score.");
  }
  
- public String getScore()
+ public String getCurrentScore()
  {
-     String _score = "Your score is " + Integer.toString(quiz.getScore()) + " out of " 
+     String _temp = "Your current score is " + Integer.toString(quiz.getScore()) + " out of " 
                      + Integer.toString(quizMenu.getQuestionCount()) + ".";
-     return _score;
+     return _temp;
  }
+ 
+ public String getHighScore()
+ {
+     String _temp;
+     _temp = "Your high score is " + "*insert high score here*" + ".\n";
+     return _temp;
+ }
+ 
   
   public boolean writeScores() {
     return false;
