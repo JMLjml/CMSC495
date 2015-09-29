@@ -62,8 +62,9 @@ public class Quiz_Controller {
   
  public void scorePopUp(JPanel _jPan)
  //causes a pop up with #correct/#answered and an okay button
+ //added by cGanier
  {
-     JOptionPane.showMessageDialog(_jPan,"score goes here");
+     JOptionPane.showMessageDialog(_jPan, "Your score is " + Integer.toString(quiz.getScore()));
  }
   
   public boolean writeScores() {
