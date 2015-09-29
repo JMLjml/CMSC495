@@ -4,10 +4,12 @@
  *      Package:       View
  *      
  *      Created on:    9/18/2015 
- *      Created by:    Caroline Ganier
- *      Last Update:   9/29/2015
- *      Updated by:    Caroline Ganier
- *      Update reason: fixed some comments & widened the q# label to fit up to 100
+ *      Author(s):     
+ *          John Lasheski - Basic design and initial method stub creation
+ *          Caroline Ganier - GUI
+ *          ...
+ *          ...
+ *          ...
  *     
  *      Class Description:
  *          This class is responsible for creating and displaying the game play
@@ -288,6 +290,12 @@ public class QuizView extends javax.swing.JFrame {
     	return questionNumberLabel.getText();
     }
     
+    public int getQuestionCount()
+    //added by cGanier
+    {
+        return questionCounter;
+    }
+    
     //first answer
     public static void setRadioBtn1Text(String answerOneText){
     	jRadioButton1.setText(answerOneText);
@@ -324,4 +332,5 @@ public class QuizView extends javax.swing.JFrame {
     public static String getAnswer(){
     	return answer;
     }
+    
 }
