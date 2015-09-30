@@ -157,9 +157,9 @@ public class Quiz_Controller {
 	  model.Quiz.setScore();	  
   }  
   
-  //generates random number from 0 to 39
+  //generates random number from 0 to 49
   public static int getRandomQuestionNumber(){
-    return rn.nextInt(39) + 1;
+    return rn.nextInt(49) + 1;
   }
   
   //Dummy Method to get unit testing working
