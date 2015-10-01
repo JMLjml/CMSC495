@@ -8,6 +8,7 @@
  * John Lasheski - Basic design and initial method stub creation
  * Joseph Dain - nextQuestion Logic
  * Joseph Dain - checkAnswer Logic
+ * Wayne Tolson - highScore Logic
  */
 
 package controller;
@@ -49,6 +50,7 @@ public class Quiz_Controller {
   public void launchQuizGame() {
     gameLaunched = true;//added by cganier.  used in check score method.
     gamesLaunched++;//added by cganier.  used in check score method.
+    this.quiz.initScore();
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
@@ -88,7 +90,13 @@ public class Quiz_Controller {
  public String getHighScore()
  {
      String _temp;
-     _temp = "Your high score is " + "*insert high score here*" + ".\n";
+     if(quiz.getScore() > highScore) {
+         _temp = "Your high score is " + quiz.getScore() + ".\n";
+         highScore = quiz.getScore();
+     }
+     else {
+         _temp = "Your high score is " + highScore + ".\n";
+     }
      return _temp;
  }
  

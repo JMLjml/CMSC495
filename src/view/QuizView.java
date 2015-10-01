@@ -248,11 +248,18 @@ public class QuizView extends javax.swing.JFrame {
     }
 
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("You pressed the Next Question button");
-        buttonGroup1.clearSelection();
-        questionCounter++;
-        questionNumberLabel.setText("Q" + questionCounter);
-        qController.displayNextQuestion();
+        // Controls total questions each quiz contains - Added by Wayne Tolson. 
+        if(questionCounter == 10) {
+            this.setVisible(false);
+            this.dispose();
+        }
+        else {
+            System.out.println("You pressed the Next Question button");
+            buttonGroup1.clearSelection();
+            questionCounter++;
+            questionNumberLabel.setText("Q" + questionCounter);
+            qController.displayNextQuestion();
+        }
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {

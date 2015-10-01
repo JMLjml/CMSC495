@@ -111,6 +111,10 @@ public String toString() {
     return questions;
   }
   
+  public void initScore() { //Used to reset score for each quiz - Added by Wayne Tolson
+    score = 0;
+  }
+    
   public int getScore() {
     return this.score;
   }
