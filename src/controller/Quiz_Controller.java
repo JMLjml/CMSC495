@@ -15,25 +15,23 @@
 
 package controller;
 
-import java.util.ArrayList;
+
 import java.util.Random;
-import java.awt.EventQueue;
 import javax.swing.JOptionPane;//added by cGanier
 import javax.swing.JPanel;
-
 import view.MainMenuView;
 import view.QuizView;
 import model.Question;
 import model.Question.QuestionTypeEnum;
 import model.Quiz;
-import view.MainMenuView;
+
 
 public class Quiz_Controller {
 
   private static Quiz quiz;
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
-  private boolean gameLaunched = false;//added by cGanier
+ // private boolean gameLaunched = false;//added by cGanier
   private int gamesLaunched = 0;//added by cGanier
   private int highScore = 0;
   private static int questionCount = 0;
@@ -50,7 +48,7 @@ public class Quiz_Controller {
   }
   
   public void launchQuizGame() {
-    gameLaunched = true;//added by cganier.  used in check score method.
+ //   gameLaunched = true;//added by cganier.  used in check score method.
     gamesLaunched++;//added by cganier.  used in check score method.
     questionCount = 0;
     quiz.initScore();
@@ -83,20 +81,30 @@ public class Quiz_Controller {
             JOptionPane.showMessageDialog(_jPan, "You must start the game before checking your score.");
  }
  
- public String getCurrentScore() {
-   return "Your current score is " + Integer.toString(quiz.getScore()) + " out of " 
+  // return the currentScore as a String message for the popup dialogue
+  public String getCurrentScore() {
+    return "Your current score is " + Integer.toString(quiz.getScore()) + " out of " 
                      + Integer.toString(quizMenu.getQuestionCount()) + ".";
-   }
+  }
  
- public int getCurrentScoreAsInt() {
-   return quiz.getScore();
- }
+  
+  // return the currentScore of the quiz as an int 
+  public int getCurrentScoreAsInt() {
+    return quiz.getScore();
+  }
  
+  // return the highScore from all games as a string message for the popup dialogue
   public String getHighScore() {    
      return "Your high score is " + highScore + ".\n";
   }  
  
 
+  /** displayNextQuestion
+   *  Method increments the questionCount number before reading in the next
+   *  random question from the array of available questions. After reading in the 
+   *  question the method checks to see if it is a multiple choice question or
+   *  a true false question. From there the quizView dialogues are updated.
+   */
   public static void displayNextQuestion() {
     System.out.println("Reached next question method");
     
@@ -141,6 +149,15 @@ public class Quiz_Controller {
   }
 
 
+  /** checkAnswer
+   * 
+   * @param answer
+   * @return true if correct
+   * 
+   * checks the supplied String argument against the expected answer string
+   * if matching the score is updated. Method also checks to see if it is time to
+   * end the game by calling the checkEndOfGame method.
+   */
   public boolean checkAnswer(String answer) {
   
     if(answer.equals(currentQuestion.getAnswerText())) {
@@ -167,6 +184,11 @@ public class Quiz_Controller {
     }
   }
 	   
+  /** updateScores
+   * Method will increment the currentScore by one and then check for a new
+   * highScore. If a new highScore has been obtained, the highScore will be set
+   * to the currentScore.
+   */
   private void updateScores() {
 	  System.out.println("Updating scores!");
 	  model.Quiz.setScore();
