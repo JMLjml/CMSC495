@@ -5,7 +5,7 @@
  * 
  * Author(s):
  * 
- * John Lasheski - Basic design and initial method stub creation, 
+ * John Lasheski - Basic design and initial method stub creation, displayNextQuestion
  *                 updateScore logic, checkEndOfQuiz logic
  * Joseph Dain - nextQuestion Logic
  * Joseph Dain - checkAnswer Logic
