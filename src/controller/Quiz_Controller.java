@@ -35,6 +35,7 @@ public class Quiz_Controller {
   private boolean gameLaunched = false;//added by cGanier
   private int gamesLaunched = 0;//added by cGanier
   private int highScore = 0;
+  private static int questionCount = 0;
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
@@ -50,6 +51,7 @@ public class Quiz_Controller {
   public void launchQuizGame() {
     gameLaunched = true;//added by cganier.  used in check score method.
     gamesLaunched++;//added by cganier.  used in check score method.
+    questionCount = 0;
     quiz.initScore();
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
@@ -93,6 +95,8 @@ public class Quiz_Controller {
 
   public static void displayNextQuestion() {
     System.out.println("Reached next question method");
+    
+    questionCount++;
     	  
     // Get new random question
     randQuestion = getRandomQuestionNumber();
@@ -138,11 +142,21 @@ public class Quiz_Controller {
     if(answer.equals(currentQuestion.getAnswerText())) {
       System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
       updateScores();
+      checkEndOfQuiz();
       return true;    
     } else {
       System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
       //Dont add to score
+      checkEndOfQuiz();
       return false;    
+    }   
+  }
+  
+  // End the game after 10 questions
+  public void checkEndOfQuiz() {
+    if(questionCount > 9) {
+      quizMenu.setVisible(false);
+      quizMenu.dispose();
     }
   }
 	   
