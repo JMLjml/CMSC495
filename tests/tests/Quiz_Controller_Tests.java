@@ -48,21 +48,6 @@ public class Quiz_Controller_Tests {
   }
 
 
-
-
-  // Write to file is successful
-  @Test
-  public void writeScores_Succeed() {
-    assertEquals(true, qc.writeScores());
-  }
-
-  // Write to file is unsuccessful
-  @Test
-  public void writeScores_Fail() {
-    assertEquals(false, qc.writeScores());
-  }
-
-
   // Test when the user has the right answer
   @Test
   public void testCheckAnswer_Correct() {

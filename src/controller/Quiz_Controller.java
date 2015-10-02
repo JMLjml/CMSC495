@@ -5,10 +5,11 @@
  * 
  * Author(s):
  * 
- * John Lasheski - Basic design and initial method stub creation
+ * John Lasheski - Basic design and initial method stub creation, updateScore logic
  * Joseph Dain - nextQuestion Logic
  * Joseph Dain - checkAnswer Logic
- * Wayne Tolson - highScore Logic
+ * Wayne Tolson - highScore dialogue
+ * 
  */
 
 package controller;
@@ -28,13 +29,12 @@ import view.MainMenuView;
 
 public class Quiz_Controller {
 
-  //private ArrayList<Quiz> quizzes;
   private static Quiz quiz;
-  private Question currQuestion;
   private MainMenuView mainMenu;
   private QuizView quizMenu;//added by cGanier
   private boolean gameLaunched = false;//added by cGanier
   private int gamesLaunched = 0;//added by cGanier
+  private int highScore = 0;
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
@@ -44,13 +44,13 @@ public class Quiz_Controller {
     this.mainMenu = _mainMenu;
     mainMenu.setVisible(true);
     mainMenu.setControl(this);
-    this.quiz = new Quiz("Random");
+    quiz = new Quiz("Random");
   }
   
   public void launchQuizGame() {
     gameLaunched = true;//added by cganier.  used in check score method.
     gamesLaunched++;//added by cganier.  used in check score method.
-    this.quiz.initScore();
+    quiz.initScore();
     System.out.println("This is the main entry point for the whole system");
     System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
@@ -70,7 +70,7 @@ public class Quiz_Controller {
  //causes a pop up with #correct/#answered and an okay button
  //added by cGanier
  {
-     if (gamesLaunched > 1)//played more then onen game, list highest and current score
+     if (gamesLaunched > 1)//played more then one game, list highest and current score
          JOptionPane.showMessageDialog(_jPan, "You have played " + Integer.toString(gamesLaunched) 
                  + " games.\n" + this.getHighScore() + this.getCurrentScore());
      else 
@@ -80,30 +80,16 @@ public class Quiz_Controller {
             JOptionPane.showMessageDialog(_jPan, "You must start the game before checking your score.");
  }
  
- public String getCurrentScore()
- {
-     String _temp = "Your current score is " + Integer.toString(quiz.getScore()) + " out of " 
+ public String getCurrentScore() {
+   return "Your current score is " + Integer.toString(quiz.getScore()) + " out of " 
                      + Integer.toString(quizMenu.getQuestionCount()) + ".";
-     return _temp;
- }
+   }
  
- public String getHighScore()
- {
-     String _temp;
-     if(quiz.getScore() > highScore) {
-         _temp = "Your high score is " + quiz.getScore() + ".\n";
-         highScore = quiz.getScore();
-     }
-     else {
-         _temp = "Your high score is " + highScore + ".\n";
-     }
-     return _temp;
- }
  
-  
-  public boolean writeScores() {
-    return false;
-  }
+  public String getHighScore() {    
+     return "Your high score is " + highScore + ".\n";
+  }  
+ 
 
   public static void displayNextQuestion() {
     System.out.println("Reached next question method");
@@ -161,8 +147,13 @@ public class Quiz_Controller {
   }
 	   
   private void updateScores() {
-	  System.out.println("Getting ready to add score!");
-	  model.Quiz.setScore();	  
+	  System.out.println("Updating scores!");
+	  model.Quiz.setScore();
+	  
+	  // update the highScore if needed
+	  if(quiz.getScore() > this.highScore) {
+	    this.highScore = quiz.getScore();
+	  }
   }  
   
   //generates random number from 0 to 49
