@@ -24,7 +24,10 @@ import view.QuizView;
 import model.Question.QuestionTypeEnum;
 import model.Question;
 import model.Quiz;
-import controller.Quiz_Controller;;
+import controller.Quiz_Controller;
+
+import model.QuestionParser;
+
 
 public class Quiz {
   private String name;
@@ -34,7 +37,10 @@ public class Quiz {
   public Quiz(String name) {
     this.name = name;
     this.questions = new ArrayList<Question>();
-    parseQuestions();
+    
+    model.QuestionParser.parseQuestions(questions);
+    
+    //parseQuestions();
   }
   
 
