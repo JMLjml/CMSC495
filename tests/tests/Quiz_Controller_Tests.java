@@ -51,19 +51,30 @@ public class Quiz_Controller_Tests {
   // Test when the user has the right answer
   @Test
   public void testCheckAnswer_Correct() {
-    fail("Not Yet Implemented");
-  }
+    Quiz_Controller.displayNextQuestion();    
+    String correct = new String(Quiz_Controller.getCurrentQuestion().getAnswerText());    
+    assertTrue(qc.checkAnswer(correct));
+    }
 
   // Test when the user has the wrong answer
   @Test
-  public void testCheckAnswer_Wrongt() {
-    fail("Not Yet Implemented");
+  public void testCheckAnswer_Wrong() {
+    Quiz_Controller.displayNextQuestion(); 
+    String wrong = "garbage";
+    assertFalse(qc.checkAnswer(wrong));
   }
 
   
+  /** reads in the current score, checks a known correct answer and then tests
+   *  that the score has been ++'d
+  */
   @Test
   public void testUpdateScores() {
-    fail("Not Yet Implemented");
+    int score = qc.getCurrentScoreAsInt();
+    String correct = new String(Quiz_Controller.getCurrentQuestion().getAnswerText());
+    qc.checkAnswer(correct);
+    
+    assertEquals(score + 1, qc.getCurrentScoreAsInt());    
   }
 }
 

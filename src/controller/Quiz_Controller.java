@@ -88,6 +88,9 @@ public class Quiz_Controller {
                      + Integer.toString(quizMenu.getQuestionCount()) + ".";
    }
  
+ public int getCurrentScoreAsInt() {
+   return quiz.getScore();
+ }
  
   public String getHighScore() {    
      return "Your high score is " + highScore + ".\n";
@@ -184,4 +187,8 @@ public class Quiz_Controller {
     return "Quiz Controller";
   }
   
+  // getter Method
+  public static Question getCurrentQuestion() {
+    return currentQuestion;
+  }  
 }
