@@ -51,7 +51,6 @@ public class Quiz_Tests {
   
   @Test
   public void testParseQuestions() {
-    quiz.parseQuestions();
     assertNotEquals(null, quiz.getQuestions());
   }
   

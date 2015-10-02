@@ -22,9 +22,11 @@
 package view;
 
 import controller.Quiz_Controller;
-import javax.swing.JOptionPane;
+
 
 public class MainMenuView extends javax.swing.JFrame {
+ 
+  private static final long serialVersionUID = 1L;
     //variable declaration here and end end of class (for buttons)
     private Quiz_Controller qController;
     

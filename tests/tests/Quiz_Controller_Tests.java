@@ -52,7 +52,7 @@ public class Quiz_Controller_Tests {
    */
   @Test
   public void testCheckAnswer_Correct() {
-    Quiz_Controller.displayNextQuestion();    
+    qc.displayNextQuestion();
     String correct = new String(Quiz_Controller.getCurrentQuestion().getAnswerText());    
     assertTrue(qc.checkAnswer(correct));
     }
@@ -62,7 +62,7 @@ public class Quiz_Controller_Tests {
    */
   @Test
   public void testCheckAnswer_Wrong() {
-    Quiz_Controller.displayNextQuestion(); 
+    qc.displayNextQuestion();
     String wrong = "garbage";
     assertFalse(qc.checkAnswer(wrong));
   }

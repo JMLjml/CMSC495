@@ -23,9 +23,6 @@
  ************/
 package view;
 
-import java.util.ArrayList;
-
-import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
@@ -35,6 +32,7 @@ import javax.swing.UIManager;
 
 public class QuizView extends javax.swing.JFrame {
 
+  private static final long serialVersionUID = 1L;
     private Quiz_Controller qController;
     private static String answer;
     private javax.swing.JButton btnDisplayNextQuestion;

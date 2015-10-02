@@ -11,14 +11,10 @@
  */
 package controller;
 
-import java.util.ArrayList;
 
-import view.QuizView;
 import view.MainMenuView;
 
-import model.Question;
-// delete this import, it wont be needed later
-import model.Quiz;
+
 
 public class Quiz_Application {
   

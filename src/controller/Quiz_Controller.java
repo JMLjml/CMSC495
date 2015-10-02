@@ -105,7 +105,7 @@ public class Quiz_Controller {
    *  question the method checks to see if it is a multiple choice question or
    *  a true false question. From there the quizView dialogues are updated.
    */
-  public static void displayNextQuestion() {
+  public void displayNextQuestion() {
     System.out.println("Reached next question method");
     
     questionCount++;
@@ -191,8 +191,8 @@ public class Quiz_Controller {
    */
   private void updateScores() {
 	  System.out.println("Updating scores!");
-	  model.Quiz.setScore();
-	  
+	  quiz.setScore();
+	   
 	  // update the highScore if needed
 	  if(quiz.getScore() > this.highScore) {
 	    this.highScore = quiz.getScore();

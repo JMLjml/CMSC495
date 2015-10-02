@@ -79,15 +79,13 @@ public class QuestionParser {
               
         questions.add(question);
         
-        }
+      }
       
-      } catch (FileNotFoundException e) {
-        System.err.println("Unable to find the file: fileName");
+    } catch (FileNotFoundException e) {
+      System.err.println("Unable to find the file: fileName");
         
-      } catch (IOException e) {
-        System.err.println("Unable to read the file: fileName");
-      }  
-      
-    System.out.println(questions.get(0).getQuestionText());
+    } catch (IOException e) {
+      System.err.println("Unable to read the file: fileName");
+    }  
   }
 }
