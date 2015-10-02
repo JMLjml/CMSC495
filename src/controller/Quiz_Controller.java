@@ -5,7 +5,8 @@
  * 
  * Author(s):
  * 
- * John Lasheski - Basic design and initial method stub creation, updateScore logic
+ * John Lasheski - Basic design and initial method stub creation, 
+ *                 updateScore logic, checkEndOfQuiz logic
  * Joseph Dain - nextQuestion Logic
  * Joseph Dain - checkAnswer Logic
  * Wayne Tolson - highScore dialogue
@@ -157,6 +158,9 @@ public class Quiz_Controller {
     if(questionCount > 9) {
       quizMenu.setVisible(false);
       quizMenu.dispose();
+      
+      // Maybe add a game over popup here?
+      
     }
   }
 	   
