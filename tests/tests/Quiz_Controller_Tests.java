@@ -22,7 +22,6 @@ import controller.Quiz_Controller;
 public class Quiz_Controller_Tests {
   
   private MainMenuView mainMenu;
-
   private Quiz_Controller qc;
   
   /**
@@ -48,7 +47,9 @@ public class Quiz_Controller_Tests {
   }
 
 
-  // Test when the user has the right answer
+  /** Test when the user has the right answer
+   *  read in a known correct answer and then test the checkAnswer method
+   */
   @Test
   public void testCheckAnswer_Correct() {
     Quiz_Controller.displayNextQuestion();    
@@ -56,7 +57,9 @@ public class Quiz_Controller_Tests {
     assertTrue(qc.checkAnswer(correct));
     }
 
-  // Test when the user has the wrong answer
+  /** Test when the user has the wrong answer
+   *  run the checkAnswer method against a garbage string
+   */
   @Test
   public void testCheckAnswer_Wrong() {
     Quiz_Controller.displayNextQuestion(); 
