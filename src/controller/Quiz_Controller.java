@@ -56,6 +56,7 @@ public class Quiz_Controller {
     System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
     displayNextQuestion();
+    checkEndOfQuiz();
             
     try 
     {
@@ -163,12 +164,10 @@ public class Quiz_Controller {
     if(answer.equals(currentQuestion.getAnswerText())) {
       System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
       updateScores();
-      checkEndOfQuiz();
       return true;    
     } else {
       System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
       //Dont add to score
-      checkEndOfQuiz();
       return false;    
     }   
   }
