@@ -105,16 +105,22 @@ public class QuizView extends javax.swing.JFrame {
         checkBtn.setText("Check Answer");
         checkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	checkBtn.setEnabled(false);//disable check button after it is hit--Bradley
                 jButton2ActionPerformed(evt);
+                btnDisplayNextQuestion.setEnabled(true);//enable next question button after answer checked--Bradley
             }
         });
 
         btnDisplayNextQuestion.setText("Next Question");
+        btnDisplayNextQuestion.setEnabled(false);//first run have it disabled--Bradley
         btnDisplayNextQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	checkBtn.setEnabled(true);//enable check button after next question is hit--Bradley
                 btnDisplayNextQuestionActionPerformed(evt);
+                btnDisplayNextQuestion.setEnabled(false);//disable next question button after it is hit--Bradley
             }
         });
+
 
         jRadioButton1.setBackground(new java.awt.Color(102, 153, 255));
         buttonGroup1.add(jRadioButton1);
@@ -241,7 +247,7 @@ public class QuizView extends javax.swing.JFrame {
         else if (qController.checkAnswer(answer))
                 JOptionPane.showMessageDialog(jPanel1,"Correct Answer!");
              else
-                JOptionPane.showMessageDialog(jPanel1,"Incorrecct Answer!");
+                JOptionPane.showMessageDialog(jPanel1,"Incorrect Answer!");
         answer = "0";
     }
 

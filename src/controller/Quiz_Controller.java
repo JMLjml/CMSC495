@@ -16,9 +16,12 @@
 package controller;
 
 
+import java.util.ArrayList;
 import java.util.Random;
+
 import javax.swing.JOptionPane;//added by cGanier
 import javax.swing.JPanel;
+
 import view.MainMenuView;
 import view.QuizView;
 import model.Question;
@@ -35,6 +38,7 @@ public class Quiz_Controller {
   private int gamesLaunched = 0;//added by cGanier
   private int highScore = 0;
   private static int questionCount = 0;
+  private static ArrayList<Integer> usedQuestions = new ArrayList<Integer>();//added by Bradley
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
@@ -198,10 +202,24 @@ public class Quiz_Controller {
 	  }
   }  
   
-  //generates random number from 0 to 49
+//generates random number from 0 to 49. Does not for allow repeat numbers--Bradley Wetzel
   public static int getRandomQuestionNumber(){
-    return rn.nextInt(49) + 1;
+	 
+	  //get a random number
+	  int randNum = rn.nextInt(49) + 1;
+	  
+	  //if the number has already been used, find a new one.
+	  while(usedQuestions.contains(randNum)){
+		  randNum = rn.nextInt(49) + 1;
+	  }
+	  
+	  //add the newest number to the used question list
+	  usedQuestions.add(randNum);
+	  
+	  //return the newest number
+    return randNum;
   }
+
   
   //Dummy Method to get unit testing working
   public String toString() {
