@@ -225,6 +225,10 @@ public class Quiz_Controller {
     return randNum;
   }
 
+    public String getCurrentAnswer()
+  {
+      return currentQuestion.getAnswerText();
+  }
   
   //Dummy Method to get unit testing working
   public String toString() {

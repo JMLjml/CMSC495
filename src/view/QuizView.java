@@ -242,12 +242,24 @@ public class QuizView extends javax.swing.JFrame {
         //a String value of {1, 2, 3, 4}. If no answer was selcted, 'answer' will
         //be "0" (answer initialized to "0" in constructor; reset at method end
         System.out.println("You pressed the Check Answer button");
+        String _message = "Incorrect Answer!";
         if (answer == "0")
             JOptionPane.showMessageDialog(jPanel1,"Please select an answer first.");
         else if (qController.checkAnswer(answer))
                 JOptionPane.showMessageDialog(jPanel1,"Correct Answer!");
              else
-                JOptionPane.showMessageDialog(jPanel1,"Incorrect Answer!");
+                {
+                 if (qController.getCurrentAnswer().equals("A"))   
+                    _message = "Incorrect Answer!\nThe correct answer is: " + jRadioButton1.getText();
+                 else if (qController.getCurrentAnswer().equals("B"))
+                     _message = "Incorrect Answer!\nThe correct answer is: " + jRadioButton2.getText();
+                    else if (qController.getCurrentAnswer().equals("C"))
+                         _message = "Incorrect Answer!\nThe correct answer is: " + jRadioButton3.getText();
+                        else if (qController.getCurrentAnswer().equals("D"))
+                            _message = "Incorrect Answer!\nThe correct answer is: " + jRadioButton4.getText();
+                 JOptionPane.showMessageDialog(jPanel1, _message);
+                }
+                //JOptionPane.showMessageDialog(jPanel1,"Incorrect Answer!");
         answer = "0";
     }
 
