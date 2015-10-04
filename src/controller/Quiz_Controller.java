@@ -210,6 +210,11 @@ public class Quiz_Controller {
 	  
 	  //if the number has already been used, find a new one.
 	  while(usedQuestions.contains(randNum)){
+		 
+		  //if the list has gone through almost all the question and picks another repeat, empty the list.
+		  if(usedQuestions.size()> 45){
+			  usedQuestions.clear();
+		  }
 		  randNum = rn.nextInt(49) + 1;
 	  }
 	  
