@@ -266,6 +266,7 @@ public class QuizView extends javax.swing.JFrame {
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {
         // Controls total questions each quiz contains - Added by Wayne Tolson. 
         if(questionCounter == 10) {
+            JOptionPane.showMessageDialog(jPanel1, "Quiz Complete!\n" + qController.getCurrentScore());
             this.setVisible(false);
             this.dispose();
         }
