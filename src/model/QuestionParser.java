@@ -10,6 +10,8 @@
  * 
  * Joe Dain - Parsing method and file IO
  * 
+ * Caroline Ganier - pop up window for IO error
+ * 
  */
 
 
@@ -17,17 +19,22 @@
 package model;
 
 
+import java.awt.Window;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 import model.Question.QuestionTypeEnum;
 import model.Question;
+import view.MainMenuView;
 
 
 public class QuestionParser {
+    
+  javax.swing.JPanel _winRef;
   
   public static void parseQuestions(ArrayList<Question> questions) {
     System.out.println("Parsing Questions!");
@@ -82,10 +89,18 @@ public class QuestionParser {
       }
       
     } catch (FileNotFoundException e) {
+      //pop up window added by cGanier
+      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();
+      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
       System.err.println("Unable to find the file: fileName");
-        
+      JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
+      
     } catch (IOException e) {
+      //pop  up window added by cGanier
+      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();
+      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
       System.err.println("Unable to read the file: fileName");
+      JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
     }  
   }
 }
