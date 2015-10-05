@@ -230,6 +230,7 @@ public class QuizView extends javax.swing.JFrame {
         //This is the action section for the QuizView Quit button. Clicking the
         //quit button should cause the window to become invisable and be removed
         System.out.println("You pressed the quit button in the quizView");
+        buttonGroup1.clearSelection();
         this.setVisible(false);
         this.dispose();
     }
@@ -266,7 +267,8 @@ public class QuizView extends javax.swing.JFrame {
     private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {
         // Controls total questions each quiz contains - Added by Wayne Tolson. 
         if(questionCounter == 10) {
-            JOptionPane.showMessageDialog(jPanel1, "Quiz Complete!\n" + qController.getCurrentScore());
+            JOptionPane.showMessageDialog(jPanel1, "Quiz Complete!\n" + qController.getFinalScore());
+            buttonGroup1.clearSelection();
             this.setVisible(false);
             this.dispose();
         }

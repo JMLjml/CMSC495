@@ -1,7 +1,6 @@
 M;The "Mini Triceratops", Koreaceratops, was a ceratopsian with a scaled down version of a Triceratops headgear and was thought to be about the size of a ____.; house cat; horse; labrador; elephant;C 
 M;The Koreaceratops is thought to have been a(n)  _________.; omnivore; carnivore; herbivore; scavenger;C
 M;Koreaceratops was thought to be ____ and fairly fast.; bipedal; quadrupedal; soly aquatic; winged;A
-M;The Yi qi is thought to have existed during the _____ Jurassic period.; Upper/Late Jurassic; Early Cretaceous; Mid/Late Jurassic; Triassic;B
 M;Koreaceratops had a unique fan-shaped tail formed by long neural spines, which suggests it may have been a good _______.; flyer ; fighter; parent; swimmer;D
 M;The wingspan of Quetzelcoatlus is estimated to have been __.; 36 ft; 42 ft; 20 ft; 65 ft;A
 M;Body mass of Quetzelcoatlus is estimated to have been __.; 140 - 160 kg; 50 - 65 kg; 200 - 260 kg; 185 - 200 kg;C
@@ -11,19 +10,19 @@ M;Researchers believe that due to the nature of Stegosaurus legs, they had a max
 M;The Stegosaurus was about ____ long.; 5 FT; 10 FT; 20 ft; 30 ft;D
 M;Yi Qi was approximately the size of a(n) ____ .; Pigeon; Airplane; Ostrich; Humming bird;A
 M;The only known Yi Qi specimen was found in which country?; Honduras; Yemen; France; China;D
-M;The Yi Qi is thought to have existed during the _____ period.; Early Jurassic; Early Cretaceous; Mid/Late Jurassic; Triassic;C
+M;The Yi Qi is thought to have existed during the _____ period.; Early Jurassic; Cretaceous; Mid/Late Jurassic; Triassic;C
 M;Brachiosaurus is a sauropod. This means what?; It had a long neck; It was quadrupedal(walked on all four legs); It was a herbivore; All of the above;D
 M;Brachiosaurus had ___ bones inside of its neck:; 10; 12; 14; 15;B
 M;Nigersaurus was a unique sauropod which did what?; Stood on its hind legs; Ate primarily off of the ground as opposed to trees; It had no tail; It lived in the mountains;B
 M;Dinosaur means "_____ lizard" in Greek.; Giant; Terrible; Old; Scary;B
 M;The word "Coprolite" is the scientific term for what?; Dinosaur poop; Dinosaur teeth; Dinosaur toe nails; Dinosaur feathers;A
 M;Some sauropods like Brachiosaurus did what to help with digestion?; Wave their tail; Slept 18 hours per day; Ate rocks; Roll around on their backs;C
-M;It is known that a Tyrannosaurus Rex can eat up to ____ pounds in one bite.; 100; 250; 500; 800;C
+M;It is known that a Tyrannosaurus Rex could eat up to ____ pounds in one bite.; 100; 250; 500; 800;C
 M;In which continent did the Tyrannosaurus Rex primarily reside in?; North America; Asia; Europe; Africa;A
 M;The Tyrannosaurus Rex lived during the late ______ period about 85 million to 65 million years ago.; Jurassic; Cretaceous; Triassic; Mesozoic;B
 M;Among all dinosaurs discovered, the most complete skeleton ever found was ___ percent complete.; 50; 75; 86; 98;D
 T;The remains of Koreaceratops have been found in multiple locations in Australia.;B
-T;Koreaceratops is notable for the tall, bioluminescent, neural spines on its caudal vertebrae.;B
+T;Koreaceratops is notable for tall, bioluminescent, neural spines on its caudal vertebrae.;B
 T;Most of the horned dinosaurs of the world, including koreaceratops, have been found on the Korean subcontinent.;B
 T;Quetzelcoatlus was from the Late Cretaceous of North America, and the largest known flying animal to have ever lived.;A
 T;Quetzelcoatlus was a member of the Azhdarchidae, a family of advanced toothless pterosaurs with unusually long, stiffened necks.;A
@@ -42,9 +41,9 @@ T;The largest dinosaur eggs could be over 10 liters.;B
 T;A single Brachiosaurus would eat over 200lbs of foliage per day.;A
 T;Brachiosaurus and all other sauropod dinosaurs were cold-blooded animals.;B
 T;Brachiosaurus lived in North America.;A
-T;The Tyrannosaurus Rex were sometimes compared to modern vultures as they could detect carcasses by scent across great distances.;A
+T;The Tyrannosaurus Rex is sometimes compared to modern vultures as they could detect carcasses by scent across great distances.;A
 T;The first Tyrannosaurus Rex fossil was discovered by famous fossil hunter Barnum Brown in 1902.;A
 T;The Tyrannosaurus Rex is considered the smartest among all known dinosaurs.;B
 T;Dinosaurs were among the first reptiles to roam the Earth.;B
-T;It is believed that the max a T Rex can run is 20 mph because if it went faster and fell, the fall would be severe enough to kill it.;A
+T;It is believed that the max a T Rex could run was 20 mph because if it went faster and fell, the fall would be severe enough to kill it.;A
 T;Because of the meteor that crashed into Earth 65 million years ago, all the dinosaurs died quickly and at the same time.;B

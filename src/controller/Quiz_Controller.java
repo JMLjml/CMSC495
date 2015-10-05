@@ -92,6 +92,12 @@ public class Quiz_Controller {
                      + Integer.toString(quizMenu.getQuestionCount()) + ".";
   }
  
+//return the currentScore as a String message for the end of quiz popup dialogue
+ public String getFinalScore() {
+   return "Your final score is " + Integer.toString(quiz.getScore()) + " out of " 
+                    + Integer.toString(quizMenu.getQuestionCount()) + ".";
+ }
+  
   
   // return the currentScore of the quiz as an int 
   public int getCurrentScoreAsInt() {
@@ -202,20 +208,20 @@ public class Quiz_Controller {
 	  }
   }  
   
-//generates random number from 0 to 49. Does not for allow repeat numbers--Bradley Wetzel
+//generates random number from 0 to 48. Does not for allow repeat numbers--Bradley Wetzel
   public static int getRandomQuestionNumber(){
 	 
 	  //get a random number
-	  int randNum = rn.nextInt(49) + 1;
+	  int randNum = rn.nextInt(48) + 1;
 	  
 	  //if the number has already been used, find a new one.
 	  while(usedQuestions.contains(randNum)){
 		 
 		  //if the list has gone through almost all the question and picks another repeat, empty the list.
-		  if(usedQuestions.size()> 45){
+		  if(usedQuestions.size()> 44){
 			  usedQuestions.clear();
 		  }
-		  randNum = rn.nextInt(49) + 1;
+		  randNum = rn.nextInt(48) + 1;
 	  }
 	  
 	  //add the newest number to the used question list
