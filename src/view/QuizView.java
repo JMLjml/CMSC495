@@ -1,16 +1,14 @@
 /************   
  * 
- *      Class:         QuizView
- *      Package:       View
- *      
- *      Created on:    9/18/2015 
- *      Author(s):     
- *          John Lasheski - Basic design and initial method stub creation
- *          Caroline Ganier - GUI
- *          ...
- *          ...
- *          ...
+ *      Class:         QuizView.java
+ *      Package:       View      
+ *      Created on:    September, 2015 
  *     
+ *      Author(s):     
+ *          John Lasheski   - Basic design and initial method stub creation
+ *          Caroline Ganier - GUI
+ *          Bradley Wetzel  - Button Disablement
+ * 
  *      Class Description:
  *          This class is responsible for creating and displaying the game play
  *          screen for the Agile Dinosaur game. Once initialized, this class 
@@ -18,7 +16,7 @@
  *          4 potential answer (multiple choice) or 2 potential answers (True or
  *          False).  The options will be displayed as radio buttons.  The window
  *          will also display 3 buttons, one to check the answer, one to go to 
- *          to the next screen, and one to exit the window.   
+ *          to the next screen, and one to exit the window. 
  * 
  ************/
 package view;
@@ -41,16 +39,12 @@ public class QuizView extends javax.swing.JFrame {
     private javax.swing.JButton checkBtn;
     private javax.swing.JLabel questionNumberLabel;
     private javax.swing.JPanel jPanel1;
-    //private javax.swing.JRadioButton jRadioButton1;
-    //private javax.swing.JRadioButton jRadioButton2;
-    //private javax.swing.JRadioButton jRadioButton3;
-    //private javax.swing.JRadioButton jRadioButton4;
     private int questionCounter = 1;
     
-    public QuizView(Quiz_Controller _qController) 
     //Constructor. Gives access to Quiz Controller to be used for answer 
     //validation and to start the get next question process.
-    //initCoponents starts the window and component generation.
+    //initCoponents starts the window and component generation.    
+    public QuizView(Quiz_Controller _qController) 
     {
         answer = "0";
         qController = _qController;
@@ -64,7 +58,6 @@ public class QuizView extends javax.swing.JFrame {
     public static JRadioButton jRadioButton4 = new JRadioButton();
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
@@ -224,24 +217,24 @@ public class QuizView extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
+    //This is the action section for the QuizView Quit button. Clicking the
+    //quit button should cause the window to become invisable and be removed    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        //This is the action section for the QuizView Quit button. Clicking the
-        //quit button should cause the window to become invisable and be removed
         System.out.println("You pressed the quit button in the quizView");
         buttonGroup1.clearSelection();
         this.setVisible(false);
         this.dispose();
     }
-
+    
+    //This is the action section for the Quiz Screen Check Answer button.  
+    //clicking the button should send the value stored in 'answer' to 
+    //control.Quiz_Controller.checkAanswer(String).  If answer is filled by
+    //the user selecting an answer from the radio button group, it will have
+    //a String value of {1, 2, 3, 4}. If no answer was selcted, 'answer' will
+    //be "0" (answer initialized to "0" in constructor; reset at method end
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        //This is the action section for the Quiz Screen Check Answer button.  
-        //clicking the button should send the value stored in 'answer' to 
-        //control.Quiz_Controller.checkAanswer(String).  If answer is filled by
-        //the user selecting an answer from the radio button group, it will have
-        //a String value of {1, 2, 3, 4}. If no answer was selcted, 'answer' will
-        //be "0" (answer initialized to "0" in constructor; reset at method end
         System.out.println("You pressed the Check Answer button");
         String _message = "Incorrect Answer!";
         if (answer == "0")
@@ -260,12 +253,11 @@ public class QuizView extends javax.swing.JFrame {
                             _message = "Incorrect Answer!\nThe correct answer is: " + jRadioButton4.getText();
                  JOptionPane.showMessageDialog(jPanel1, _message);
                 }
-                //JOptionPane.showMessageDialog(jPanel1,"Incorrect Answer!");
         answer = "0";
     }
 
-    private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {
-        // Controls total questions each quiz contains - Added by Wayne Tolson. 
+    // Controls total questions each quiz contains - Added by Wayne Tolson.
+    private void btnDisplayNextQuestionActionPerformed(java.awt.event.ActionEvent evt) { 
         if(questionCounter == 10) {
             JOptionPane.showMessageDialog(jPanel1, "Quiz Complete!\n" + qController.getFinalScore());
             buttonGroup1.clearSelection();
@@ -282,7 +274,6 @@ public class QuizView extends javax.swing.JFrame {
     }
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         answer = "A";
     }
 
@@ -316,8 +307,8 @@ public class QuizView extends javax.swing.JFrame {
     	return questionNumberLabel.getText();
     }
     
-    public int getQuestionCount()
     //added by cGanier
+    public int getQuestionCount()
     {
         return questionCounter;
     }

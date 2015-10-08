@@ -1,25 +1,28 @@
-/** 
- * Quiz_Controller.java
+/************   
  * 
- * Provides  controller functionality for the Dino Quiz Application.
+ *      Class:         Quiz_Controller.java
+ *      Package:       controller
+ *      Created on:    September, 2015 
  * 
- * Author(s):
+ *      Author(s):     
+ *          John Lasheski   - Basic design and initial method stub creation, 
+ *                            displayNextQuestion updateScore logic, 
+ *                            checkEndOfQuiz logic
+ *          Joseph Dain     - nextQuestion Logic, checkAnswer Logic
+ *          Wayne Tolson    - HighScore dialogue
+ *          Caroline Ganier - Score pop up window
+ *          Bradley Wetzel  - random number generation, array list    
  * 
- * John Lasheski - Basic design and initial method stub creation, displayNextQuestion
- *                 updateScore logic, checkEndOfQuiz logic
- * Joseph Dain - nextQuestion Logic
- * Joseph Dain - checkAnswer Logic
- * Wayne Tolson - highScore dialogue
+ *      Class Description:
+ *          Provides controller functionality for the Dino Quiz Application.
  * 
- */
-
+ ************/
 package controller;
-
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.JOptionPane;//added by cGanier
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import view.MainMenuView;
@@ -33,12 +36,11 @@ public class Quiz_Controller {
 
   private static Quiz quiz;
   private MainMenuView mainMenu;
-  private QuizView quizMenu;//added by cGanier
- // private boolean gameLaunched = false;//added by cGanier
-  private int gamesLaunched = 0;//added by cGanier
+  private QuizView quizMenu;
+  private int gamesLaunched = 0;
   private int highScore = 0;
   private static int questionCount = 0;
-  private static ArrayList<Integer> usedQuestions = new ArrayList<Integer>();//added by Bradley
+  private static ArrayList<Integer> usedQuestions = new ArrayList<Integer>();
   
   static Random rn = new Random();
   static int randQuestion = getRandomQuestionNumber();
@@ -52,7 +54,6 @@ public class Quiz_Controller {
   }
   
   public void launchQuizGame() {
- //   gameLaunched = true;//added by cganier.  used in check score method.
     gamesLaunched++;//added by cganier.  used in check score method.
     questionCount = 0;
     quiz.initScore();
@@ -72,9 +73,9 @@ public class Quiz_Controller {
     }
   };
   
- public void scorePopUp(JPanel _jPan)
  //causes a pop up with #correct/#answered and an okay button
- //added by cGanier
+ //added by cGanier  
+ public void scorePopUp(JPanel _jPan)
  {
      if (gamesLaunched > 1)//played more then one game, list highest and current score
          JOptionPane.showMessageDialog(_jPan, "You have played " + Integer.toString(gamesLaunched) 
@@ -108,14 +109,13 @@ public class Quiz_Controller {
   public String getHighScore() {    
      return "Your high score is " + highScore + ".\n";
   }  
- 
 
   /** displayNextQuestion
    *  Method increments the questionCount number before reading in the next
    *  random question from the array of available questions. After reading in the 
    *  question the method checks to see if it is a multiple choice question or
    *  a true false question. From there the quizView dialogues are updated.
-   */
+   **/
   public void displayNextQuestion() {
     System.out.println("Reached next question method");
     
@@ -159,7 +159,6 @@ public class Quiz_Controller {
     }
   }
 
-
   /** checkAnswer
    * 
    * @param answer
@@ -170,7 +169,6 @@ public class Quiz_Controller {
    * end the game by calling the checkEndOfGame method.
    */
   public boolean checkAnswer(String answer) {
-  
     if(answer.equals(currentQuestion.getAnswerText())) {
       System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
       updateScores();
@@ -186,10 +184,7 @@ public class Quiz_Controller {
   public void checkEndOfQuiz() {
     if(questionCount > 9) {
       quizMenu.setVisible(false);
-      quizMenu.dispose();
-      
-      // Maybe add a game over popup here?
-      
+      quizMenu.dispose();    
     }
   }
 	   
@@ -231,7 +226,9 @@ public class Quiz_Controller {
     return randNum;
   }
 
-    public String getCurrentAnswer()
+  //returns the leter selection for the answer {"A", "B", "C", "D"}
+  //added by cGanier  
+  public String getCurrentAnswer()
   {
       return currentQuestion.getAnswerText();
   }

@@ -1,14 +1,18 @@
-/** 
- * Question.java
+/************   
  * 
- * Object class designed to hold one question. Will be used by the Quiz.java class to 
- * provide basic model functionality for the Dino Quiz Application.
+ *      Class:         Question.java
+ *      Package:       model
+ *      Created on:    September, 2015 
  * 
- * Author(s):
+ *      Author(s):     
+ *          John Lasheski   
+ *     
+ *      Class Description:
+ *          Object class designed to hold one question. Will be used by the 
+ *          Quiz.java class to provide basic model functionality for the Dino 
+ *          Quiz Application.
  * 
- * John Lasheski
- * 
- */
+ ************/
 package model;
 
 import java.util.ArrayList;

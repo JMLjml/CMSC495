@@ -1,23 +1,21 @@
-/** 
- * QuestionParser.java
+/************   
  * 
- * parsesQuestions objects from a flat text file for the Quiz class to use
+ *      Class:         QuestionParser.java
+ *      Package:       model
+ *      Created on:    September, 2015 
  * 
- * Author(s):
+ *      Author(s):     
+ *          John Lasheski   - Basic design and initial method stub creation, 
+ *                            also contributed to the parsing method
+ *          Joe Dain        - Parsing method and file IO
+ *          Caroline Ganier - pop up window for IO error
  * 
- * John Lasheski - Basic design and initial method stub creation, also contributed
- *                 to the parsing method
+ *      Class Description:
+ *          Parses Questions objects from a flat text file for the Quiz class 
+ *          to use.
  * 
- * Joe Dain - Parsing method and file IO
- * 
- * Caroline Ganier - pop up window for IO error
- * 
- */
-
-
-
+ ************/
 package model;
-
 
 import java.awt.Window;
 import java.io.BufferedReader;
@@ -30,7 +28,6 @@ import javax.swing.JOptionPane;
 import model.Question.QuestionTypeEnum;
 import model.Question;
 import view.MainMenuView;
-
 
 public class QuestionParser {
     
@@ -96,10 +93,10 @@ public class QuestionParser {
       JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
       
     } catch (IOException e) {
-      //pop  up window added by cGanier
-      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();
-      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
       System.err.println("Unable to read the file: fileName");
+      //pop  up window added by cGanier
+      javax.swing.JPanel _jPanel1 = new javax.swing.JPanel();//create a temp container
+      _jPanel1.setBackground(new java.awt.Color(102, 153, 255));
       JOptionPane.showMessageDialog(_jPanel1, "Unable to find the file: fileName");
     }  
   }

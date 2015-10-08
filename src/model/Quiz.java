@@ -1,17 +1,18 @@
-/** 
- * Quiz.java
+/************   
  * 
- * Provides basic model functionality for the Dino Quiz Application.
+ *      Class:         Quiz.java
+ *      Package:       model
+ *      Created on:    September, 2015 
  * 
- * Author(s):
+ *      Author(s):     
+ *          John Lasheski   - Basic design and initial method stub creation, 
+ *                            also contributed to the parsing method
+ *          Joe Dain        - Parsing method and file IO
  * 
- * John Lasheski - Basic design and initial method stub creation, also contributed
- *                 to the parsing method
+ *      Class Description:
+ *          Provides basic model functionality for the Dino Quiz Application.
  * 
- * Joe Dain - Parsing method and file IO
- * 
- */
-
+ ************/
 package model;
 
 import java.util.ArrayList;
@@ -38,7 +39,8 @@ public class Quiz {
     return this.questions;
   }
   
-  public void initScore() { //Used to reset score for each quiz - Added by Wayne Tolson
+  //Used to reset score for each quiz - Added by Wayne Tolson
+  public void initScore() { 
     score = 0;
   }
     

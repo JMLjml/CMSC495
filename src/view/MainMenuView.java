@@ -1,14 +1,13 @@
 /************   
  * 
- *      Class:         MainMenuView
- *      Package:       View
- *      
- *      Created on:    9/18/2015 
- *      Created by:    Caroline Ganier
- *      Last Update:   9/25/2015
- *      Updated by:    Caroline Ganier
- *      Update reason: updated comments
+ *      Class:         MainMenuView.java
+ *      Package:       View      
+ *      Created on:    September, 2015 
  *     
+ *      Author(s):     
+ *          John Lasheski   - Basic design and initial method stub creation
+ *          Caroline Ganier - GUI
+ * 
  *      Class Description:
  *          This class is responsible for creating and displaying the main menu
  *          of the Agile Dinosaur game. Once initialized, this class will build
@@ -17,12 +16,10 @@
  *          currently open, clicking quit will also cause the program to end.  
  *          Clicking start will cause a new quiz view window to open.
  * 
- * 
  ************/
 package view;
 
 import controller.Quiz_Controller;
-
 
 public class MainMenuView extends javax.swing.JFrame {
  
@@ -30,15 +27,15 @@ public class MainMenuView extends javax.swing.JFrame {
     //variable declaration here and end end of class (for buttons)
     private Quiz_Controller qController;
     
+    //Constructor. Calls initComponents to display Main Menu and sets visibility    
     public MainMenuView() 
-    //Constructor. Calls initComponents to display Main Menu and sets visibility
     {
         initComponents();
         this.setVisible(true);
     }
 
+  //Creates access to the QuizController class from MainMenuView for game launch.    
   public void setControl(Quiz_Controller _qController)
-  //Creates access to the QuizController class from MainMenuView for game launch.
   {
       qController = _qController;
   }
@@ -127,25 +124,19 @@ public class MainMenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-/*    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        System.out.println("You pressed the check score button");
-        qController.scorePopUp(jPanel1);
-    }                                        
-*/    
     
+    //This is the action section for the Main Menu Quit button. Clicking the
+    //quit button should cause the window to become invisable and be removed    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //This is the action section for the Main Menu Quit button. Clicking the
-        //quit button should cause the window to become invisable and be removed
         System.out.println("You pressed the quit button");
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //This is the action section for the MainMenu Start button. Clicking the
+    //the start button should pass control back to the Quiz Controller so 
+    //that it can pass control to the Quiz View and display the quiz game.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //This is the action section for the MainMenu Start button. Clicking the
-        //the start button should pass control back to the Quiz Controller so 
-        //that it can pass control to the Quiz View and display the quiz game.
         System.out.println("You pressed the start button");          
         qController.launchQuizGame();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -154,44 +145,7 @@ public class MainMenuView extends javax.swing.JFrame {
         System.out.println("You pressed the check score button");
         qController.scorePopUp(jPanel1);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    /***** Generated code, not needed-cGanier
-    // @param args the command line arguments
     
-    public static void main(String args[]) {
-        // Set the Nimbus look and feel 
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        // If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-        // For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-        //
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        // Create and display the form 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenuView().setVisible(true);
-            }
-        });
-    }
-    *****/    
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
