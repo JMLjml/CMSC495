@@ -1,0 +1,13 @@
+﻿	From the outset of the project we knew that this would be a GUI application that used some logic operations to interact with both the user and the quiz data. Therefore it was decided that we would use the Model View Controller framework for our design. This is a design pattern that had been around for quite a while and there was plenty of documentation on the subject. Our team had all heard of the pattern and knew that it would fill our needs nicely.
+
+	Our initial design was sketched out using UML diagramming. This was a good tool for getting ideas on paper and to help find missing links and functionality. Our design consisted of six core classes and an enumeration.
+
+	Quiz_Application – contains main
+	Question – model object – most basic form of data in the quiz
+	Quiz – model class used to hold and manipulate the question data for the quiz
+	Quiz_Controller – controller class used to talk back and forth between the views and the model
+	QuizView – a view class used for in game GUI
+	MainMenuView – a view class for launching quizzes 
+	QuestionTypeEnum – an enumeration to help determine question type
+
+	Throughout the development process we found that the controller class and the model objects didn't need much modification from their original design parameters. The exception being the separation of the QuestionParser into its own class. This differs form the view objects. Our initial design of the view classes was purposely vague. It wasn't until we started building out the screens that we knew what buttons would be needed and what helper methods would be needed. These classes changed much from out initial UML blue prints. In addition to the view class changes we of course had small changes to make to the other classes such as helper methods and other variables to help manage state. Given more time, these changes probably could have been foreseen in the design stage, but we are still content that our final product remains faithful to our original design and intent.
