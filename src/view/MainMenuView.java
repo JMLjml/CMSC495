@@ -128,7 +128,6 @@ public class MainMenuView extends javax.swing.JFrame {
     //This is the action section for the Main Menu Quit button. Clicking the
     //quit button should cause the window to become invisable and be removed    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        System.out.println("You pressed the quit button");
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -137,12 +136,10 @@ public class MainMenuView extends javax.swing.JFrame {
     //the start button should pass control back to the Quiz Controller so 
     //that it can pass control to the Quiz View and display the quiz game.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("You pressed the start button");          
         qController.launchQuizGame();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.out.println("You pressed the check score button");
         qController.scorePopUp(jPanel1);
     }//GEN-LAST:event_jButton3ActionPerformed
     

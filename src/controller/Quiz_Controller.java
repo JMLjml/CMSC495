@@ -57,8 +57,6 @@ public class Quiz_Controller {
     gamesLaunched++;//added by cganier.  used in check score method.
     questionCount = 0;
     quiz.initScore();
-    System.out.println("This is the main entry point for the whole system");
-    System.out.println("Launch the main menu view here");
     quizMenu = new QuizView(this);//this line starts the quiz screen
     displayNextQuestion();
     checkEndOfQuiz();
@@ -117,17 +115,12 @@ public class Quiz_Controller {
    *  a true false question. From there the quizView dialogues are updated.
    **/
   public void displayNextQuestion() {
-    System.out.println("Reached next question method");
-    
     questionCount++;
-    	  
     // Get new random question
     randQuestion = getRandomQuestionNumber();
-      
     currentQuestion = quiz.getQuestion(randQuestion);
-    
     //Display questionType
-    System.out.println(currentQuestion.getQuestionType());
+//    System.out.println(currentQuestion.getQuestionType());
       
     //if the current question is multiple choice
     if(currentQuestion.getQuestionType() == QuestionTypeEnum.MULTIPLE_CHOICE) {
@@ -170,11 +163,9 @@ public class Quiz_Controller {
    */
   public boolean checkAnswer(String answer) {
     if(answer.equals(currentQuestion.getAnswerText())) {
-      System.out.println("YOU GOT IT CORRECT, AWESOME!!!");
       updateScores();
       return true;    
     } else {
-      System.out.println("YOU GOT IT WRONG, NOT AWESOME!!!");
       //Dont add to score
       return false;    
     }   
@@ -194,9 +185,7 @@ public class Quiz_Controller {
    * to the currentScore.
    */
   private void updateScores() {
-	  System.out.println("Updating scores!");
 	  quiz.setScore();
-	   
 	  // update the highScore if needed
 	  if(quiz.getScore() > this.highScore) {
 	    this.highScore = quiz.getScore();

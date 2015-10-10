@@ -34,8 +34,6 @@ public class QuestionParser {
   javax.swing.JPanel _winRef;
   
   public static void parseQuestions(ArrayList<Question> questions) {
-    System.out.println("Parsing Questions!");
-       
     BufferedReader br = null;
     String strLine = "";
    

@@ -222,7 +222,6 @@ public class QuizView extends javax.swing.JFrame {
     //This is the action section for the QuizView Quit button. Clicking the
     //quit button should cause the window to become invisable and be removed    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("You pressed the quit button in the quizView");
         buttonGroup1.clearSelection();
         this.setVisible(false);
         this.dispose();
@@ -235,7 +234,6 @@ public class QuizView extends javax.swing.JFrame {
     //a String value of {1, 2, 3, 4}. If no answer was selcted, 'answer' will
     //be "0" (answer initialized to "0" in constructor; reset at method end
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("You pressed the Check Answer button");
         String _message = "Incorrect Answer!";
         if (answer == "0")
             JOptionPane.showMessageDialog(jPanel1,"Please select an answer first.");
@@ -265,7 +263,6 @@ public class QuizView extends javax.swing.JFrame {
             this.dispose();
         }
         else {
-            System.out.println("You pressed the Next Question button");
             buttonGroup1.clearSelection();
             questionCounter++;
             questionNumberLabel.setText("Q" + questionCounter);
